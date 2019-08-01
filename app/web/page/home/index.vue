@@ -1,0 +1,73 @@
+<template>
+  <el-container id='app' class="index-page-container">
+    <el-header class="index-page-container-header" ref="header" v-if="hiddenHeaderAndFooter">
+      <common-header></common-header>
+    </el-header>
+    <el-main class="index-page-container-main">
+      <router-view></router-view>
+    </el-main>
+    <el-footer class="index-page-container-footer" v-if="hiddenHeaderAndFooter">
+      <common-footer></common-footer>
+    </el-footer>
+  </el-container>
+</template>
+
+<script>
+import Vue from 'vue'
+import router from './home.router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import CommonHeader from '@/component/common/CommonHeader'
+import CommonFooter from '@/component/common/CommonFooter'
+
+Vue.use(ElementUI)
+
+export default {
+  name: 'App',
+  router,
+  mounted() {
+    // console.log('this.route', this.$route)
+  },
+  computed: {
+    hiddenHeaderAndFooter() {
+      return this.$route.name === 'EmailContent' ? false : true
+    }
+  },
+  components: {
+    CommonHeader,
+    CommonFooter
+  },
+}
+</script>
+<style lang="scss">
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+}
+.index-page-container {
+  min-height: 100%;
+  &-main {
+    padding: 0;
+    padding-top: 82px;
+    // overflow: hidden;
+  }
+  &-header.el-header {
+    padding: 0;
+    height: auto !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+  }
+  &-footer.el-footer {
+    padding: 0;
+    height: auto !important;
+    background-color: #282828;
+  }
+}
+</style>
+
