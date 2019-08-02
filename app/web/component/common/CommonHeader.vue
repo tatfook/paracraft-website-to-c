@@ -34,7 +34,7 @@ export default {
       }
       this.$router.push({ name: 'HomePage' })
     },
-    goDownload(name) {
+    goPage(name) {
       this.$router.push({
         name
       })
