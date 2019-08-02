@@ -8,18 +8,40 @@
         <h4 class="common-footer-center-part-2-title">{{i.title}}</h4>
         <ul class="common-footer-center-part-2-list">
           <li class="common-footer-center-part-2-item" v-for="(j, num) in i.secondaryList" :key="num">
-            <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" target="_blank">{{j.title}}</a>
+            <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && num == 0 ? '' : '_blank'">{{j.title}}</a>
           </li>
         </ul>
       </div>
+      <div class="common-footer-center-part-3">
+        <h4 class="common-footer-center-part-2-title">找到我们</h4>
+        <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层284.png" alt=""></a>
+        <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层285.png" alt=""></a>
+      </div>
+      <div class="common-footer-center-part-4">
+        <img src="@/asset/images/footerImg/图层288.png" alt="">
+      </div>
     </div>
+    <p class="common-footer-bottom">© Tatfook | 粤ICP备14002196号 | {{visitCount}} visits today</p>
   </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
   name: 'CommonFooter',
+  mounted() {
+    axios
+      .post('https://api-stage.keepwork.com/core/v0/keepworks/page_visit', {
+        url: window.location.href
+      })
+      .then(response => {
+        this.visitCount = response.data
+      })
+      .catch(error => console.log(error))
+  },
   data() {
     return {
+      visitCount: 0,
       listData: [
         {
           title: 'Paracraft创意空间',
@@ -108,6 +130,21 @@ export default {
         }
       }
     }
+    &-part-3 {
+      width: 156px;
+      margin-left: 200px;
+      &-img {
+        width: 55px;
+        margin-right: 20px;
+      }
+    }
+    &-part-4 {
+    }
+  }
+  &-bottom {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
   }
 }
 </style>

@@ -1,82 +1,246 @@
 <template>
   <div class="download">
-    <div class="download-intro">
-      <h3 class="download-intro-title">免费的3D可视化编程教学工具</h3>
-      <p class="download-intro-text">7岁以上用户可以用Paracraft创作3D动画和电影，学习和编写计算机程序，支持积木式编程和代码编程一键切换，界面操作简单，老师和学生都能快速上手。</p>
-    </div>
-    <div class="download-versions">
-      <div class="download-versions-part">
-        <h5 class="download-versions-part-title">桌面版</h5>
-        <div class="download-versions-part-img"><img src="@/asset/images/desk.png" alt="desk"></div>
-        <el-button class="download-versions-part-btn"><a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.exe?ver=07411">直接下载</a></el-button>
-      </div>
-      <div class="download-versions-part">
-        <h5 class="download-versions-part-title">Mac版</h5>
-        <div class="download-versions-part-img"><img src="@/asset/images/mac.png" alt="mac"></div>
-        <el-button class="download-versions-part-btn"><a href="https://itunes.apple.com/cn/app/paracraft/id1422406070" target="_blank">App Store下载</a></el-button>
-        <el-button class="download-versions-part-btn"><a href="http://cdn.keepwork.com/paracraft/mac/paracraft.pkg?ver=07386">直接下载</a></el-button>
-      </div>
-      <div class="download-versions-part">
-        <h5 class="download-versions-part-title">Android版</h5>
-        <div class="download-versions-part-img"><img class="download-versions-part-img-android" src="@/asset/images/Android.png" alt="Android"><img src="@/asset/images/Android_2.png" alt="Android"></div>
-        <el-button class="download-versions-part-btn"><a href="http://cdn.keepwork.com/paracraft/android/paracraft.apk?ver=07411">下载安卓手机APK安装包</a></el-button>
+    <div class="download-welcome">
+      <div class="download-welcome-center">
+        <p class="download-welcome-center-title">欢迎下载Paracraft</p>
+        <p class="download-welcome-center-version"><span class="download-welcome-center-version-new">最新版本：0.7.457</span> 更新日志</p>
+        <p class="download-welcome-center-count">
+          <span class="download-welcome-center-count-diamonds">1</span>
+          <span class="download-welcome-center-count-diamonds">5</span>
+          下载使用
+        </p>
       </div>
     </div>
-    <div class="download-pic">
-      <img src="@/asset/images/adjust.jpg" alt="">
+    <div class="download-center">
+      <p class="download-center-guide">遇到安装问题，不会安装？<a class="download-center-guide-link" href="https://keepwork.com/official/docs/sales/common/install_guide" target="_blank">点击这里</a>查看安装指引</p>
+      <div class="download-center-cabinet">
+        <div class="download-center-cabinet-box-wrap">
+          <div class="download-center-cabinet-box">
+            <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
+            <p class="download-center-cabinet-box-recommend">Windows版（推荐）</p>
+            <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.exe?ver=07457" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight "><img class="download-center-cabinet-box-desc-img" src="@/asset/images/下载页/下载安装/Windows-8拷贝.png" alt="">下载</a>
+            <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.zip?ver=07470" class="download-center-cabinet-box-desc">U盘免安装版</a>
+            <p class="download-center-cabinet-box-hint">如无法安装，可能你使用了特殊的下载工具，可尝试U盘免安装版</p>
+          </div>
+        </div>
+        <div class="download-center-cabinet-box-wrap">
+          <div class="download-center-cabinet-box">
+            <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
+            <a href="https://itunes.apple.com/cn/app/paracraft/id1422406070" target="_blank" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+            <p class="download-center-cabinet-box-hint">0.7.430</p>
+          </div>
+        </div>
+      </div>
+      <div class="download-center-cabinet download-center-cabinet-phone">
+        <div class="download-center-cabinet-box-wrap">
+          <div class="download-center-cabinet-box">
+            <div class="download-center-cabinet-box-cover">
+              <img src="@/asset/images/下载页/下载安装/phone_android.png" alt="">
+              <img class="download-center-cabinet-box-QR" src="@/asset/images/下载页/下载安装/qrct-049b1319e0b9933ca83e6cd2e27524b4.png" alt="">
+            </div>
+            <p class="download-center-cabinet-box-recommend">Android版</p>
+            <a href="http://cdn.keepwork.com/paracraft/android/paracraft.apk?ver=07411" class="download-center-cabinet-box-hint-phone">点击下载手机APK安装包从华为应用商店下载</a>
+          </div>
+        </div>
+        <div class="download-center-cabinet-box-wrap">
+          <div class="download-center-cabinet-box">
+            <img src="@/asset/images/下载页/下载安装/phone_android拷贝.png" alt="">
+            <p class="download-center-cabinet-box-hint">IOS版 (敬请期待)</p>
+          </div>
+        </div>
+      </div>
+      <div class="download-center-paracraft">
+        <p class="download-center-paracraft-title">用Win10虚拟机安装Paracraft</p>
+        <p class="download-center-paracraft-hint">适合WindowsXP，Linux，MacOS用户：<a class="download-center-paracraft-hint-guide" href="https://keepwork.com/official/docs/references/paracraft_vm" target="_blank">点击这里查看安装指南</a>。</p>
+      </div>
+      <div class="download-center-paracraft download-center-paracraft-code ">
+        <p class="download-center-paracraft-title">源代码</p>
+        <p class="download-center-paracraft-hint">paracraft使用NPL语言开发，是免费开源的。如果你希望参与贡献代码，请到Github上联系我。</p>
+        <p class="download-center-paracraft-hint"><a class="download-center-paracraft-hint-guide" href="https://github.com/LiXizhi" target="_blank">https://github.com/LiXizhi</a></p>
+        <p class="download-center-paracraft-hint"><a class="download-center-paracraft-hint-guide" href="https://github.com/LiXizhi/ParacraftSDK" target="_blank">https://github.com/LiXizhi/ParacraftSDK</a></p>
+      </div>
+    </div>
+    <div class="download-abstract">
+      <div class="download-abstract-intro">
+        <div class="download-abstract-intro-box">
+          <div class="download-abstract-intro-box-content">
+            <img class="download-abstract-intro-box-content" src="@/asset/images/下载页/all_devices_banner.png" alt="">
+            <p class="download-abstract-intro-box-content-text">Paracraft创意空间是一款面向7岁以上用户的免费的3D创作软件。你可以用它创建3D电影场景，演员，动作，摄影机，字幕，配音，立体视频输出等。 提供PC和手机版下载。下载后可观赏百部优秀3D电影作品，创造属于你的电影世界。<a class="download-center-paracraft-hint-guide" href="/paracraftStory">点击了解更多</a></p>
+          </div>
+        </div>
+        <div class="download-abstract-intro-box">
+          <div class="download-abstract-intro-box-content">
+            <img class="download-abstract-intro-box-content-img" src="@/asset/images/下载页/paracraft_app_logo.png" alt="">
+            <h4 class="download-abstract-intro-box-content-title">Paracraft创意空间</h4>
+            <p class="download-abstract-intro-box-content-text">3D个人电影创作软件</p>
+            <p class="download-abstract-intro-box-content-text">开源</p>
+            <p class="download-abstract-intro-box-content-text">Paracraft SDK，源代码，材质包，插件请看这里</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="download-center">
+      <div class="download-center-paracraft download-center-paracraft-code ">
+        <p class="download-center-paracraft-title">更新日志:</p>
+        <p class="download-center-paracraft-hint"><a class="download-center-paracraft-hint-guide" href="https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019" target="_blank">· 查看最新的更新日志</a></p>
+      </div>
+      <div class="download-center-paracraft download-center-paracraft-code ">
+        <p class="download-center-paracraft-title">其它下载:</p>
+        <p class="download-center-paracraft-hint"><a class="download-center-paracraft-hint-guide" href="http://cdn.keepwork.com/tools/ChromeForWinXP.zip">· Chrome浏览器 WinXP版</a></p>
+      </div>
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .download {
-  max-width: 1200px;
-  margin: 0 auto;
-  &-intro {
-    text-align: center;
-    &-title {
-      font-size: 40px;
-      color: #333;
-      line-height: 40px;
-      font-weight: normal;
-      margin-top: 100px;
-    }
-    &-text {
-      max-width: 1084px;
-      font-size: 20px;
-      color: #666;
-      line-height: 39px;
-    }
-  }
-  &-versions {
-    text-align: center;
-    display: flex;
-    &-part {
-      flex: 1;
+  &-welcome {
+    background: #1e7cfc;
+    &-center {
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #fff;
       &-title {
-        font-size: 18px;
+        margin: 0;
+        padding: 52px 0 0;
+        font-size: 36px;
       }
-      &-img {
-        margin: 40px 0 48px;
-        &-android {
-          margin-right: 16px;
+      &-version {
+        &-new {
+          margin-right: 30px;
         }
       }
-      &-btn {
-        padding: 0;
-        a {
-          text-decoration: none;
-          color: #666;
-          display: block;
-          height: 40px;
-          line-height: 40px;
-          padding: 0 10px;
+      &-count {
+        padding: 0 0 20px;
+        &-diamonds {
+          display: inline-block;
+          background: #fff;
+          color: #1e7cfc;
+          padding: 0 4px;
         }
       }
     }
   }
-  &-pic {
-    text-align: center;
-    margin: 143px 0;
+  &-center {
+    max-width: 1200px;
+    margin: 0 auto;
+    &-guide {
+      min-height: 62px;
+      line-height: 62px;
+      background: #e7f5ed;
+      text-align: center;
+      &-link {
+        text-decoration: none;
+        color: #ff8150;
+      }
+    }
+    &-cabinet {
+      display: flex;
+      padding: 40px 0;
+      &-phone {
+        background: rgb(232, 245, 234);
+      }
+      &-box {
+        flex: 1;
+        text-align: center;
+        align-items: center;
+        &-cover {
+          width: 50px;
+          margin: 0 auto;
+          position: relative;
+        }
+        &-QR {
+          position: absolute;
+          right: -110px;
+          top: 0;
+        }
+        &-wrap {
+          display: flex;
+          align-items: center;
+          flex: 1;
+        }
+        &-recommend {
+        }
+        &-desc {
+          display: flex;
+          padding: 7px;
+          border-radius: 4px;
+          margin: 14px auto;
+          max-width: 142px;
+          border: 1px solid #409eff;
+          justify-content: center;
+          color: #409eff;
+          text-decoration: none;
+          &-highlight {
+            background: #409eff;
+            color: #fff;
+          }
+          &-img {
+            width: 20px;
+            margin-right: 4px;
+          }
+        }
+        &-hint {
+          font-size: 14px;
+          color: #8d8d8d;
+          &-phone {
+            max-width: 154px;
+            color: #32b16c;
+            margin: 0 auto;
+            font-size: 14px;
+            display: block;
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &-paracraft {
+      border-bottom: 1px solid #d9d9d9;
+      &-title {
+        color: #333;
+        font-size: 24px;
+        margin: 53px 0 20px;
+      }
+      &-hint {
+        color: #8d8d8d;
+        font-size: 16px;
+        &-guide {
+          color: #399fff;
+          text-decoration: none;
+        }
+      }
+      &-code {
+        border: none;
+      }
+    }
+  }
+  &-abstract {
+    background: rgb(249, 248, 248);
+    padding: 68px 0 74px;
+    &-intro {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      &-box {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        &-content {
+          &-title {
+            margin: 40px 0 10px 0;
+          }
+          &-text {
+            max-width: 478px;
+            color: #8d8d8d;
+            font-size: 16px;
+            margin: 0 auto;
+            line-height: 24px;
+          }
+        }
+      }
+    }
   }
 }
 </style>

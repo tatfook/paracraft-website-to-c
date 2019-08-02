@@ -3,10 +3,10 @@
     <el-menu :default-active="activeIndex" class="common-header-menu" mode="horizontal" @select="handleSelect">
       <el-menu-item index="top" class="common-header-menu-first"><img class="common-header-menu-logoimg" src="@/asset/images/logo.png" alt="paracraft"> <span class="common-header-menu-logo">Paracraft创意空间</span></el-menu-item>
       <el-menu-item index="download" class="pull-right">
-        <el-button type="primary" class="common-header-menu-download-btn">下载</el-button>
+        <el-button type="primary" class="common-header-menu-download-btn" @click="goPage('Download')">下载</el-button>
       </el-menu-item>
       <el-menu-item index="homepage" class="pull-right">
-        <el-button type="primary" class="common-header-menu-homepage-btn">首页</el-button>
+        <el-button type="primary" class="common-header-menu-homepage-btn" @click="goPage('Homepage')">首页</el-button>
       </el-menu-item>
     </el-menu>
   </div>
@@ -33,6 +33,11 @@ export default {
         return
       }
       this.$router.push({ name: 'HomePage' })
+    },
+    goDownload(name) {
+      this.$router.push({
+        name
+      })
     }
   }
 }

@@ -2,8 +2,8 @@
   <div class="homepage">
     <div class="homepage-banner">
       <div class="homepage-banner-buttons">
-        <span class="homepage-banner-buttons-btn"><img src="@/asset/images/下载.png" alt=""></span>
-        <span class="homepage-banner-buttons-btn"><img src="@/asset/images/观看视频.png" alt=""></span>
+        <span class="homepage-banner-buttons-btn" @click="goDownload()"><img src="@/asset/images/下载.png" alt=""></span>
+        <span class="homepage-banner-buttons-btn" @click="showVideo('https://qiniu.keepwork.com/f6bab200-bd94-11e8-9154-47b62c80c5e7.mp4?e=1564817063&token=LYZsjH0681n9sWZqCM4E2KmU6DsJOE7CAM4O3eJq:OKNxfvL4zhUTPlY6wZs4BZo7v3Y=#%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%9101.mp4')"><img src="@/asset/images/观看视频.png" alt=""></span>
       </div>
     </div>
     <div class="homepage-phrase">
@@ -51,7 +51,7 @@
     <div class="homepage-download">
       <h3 class="homepage-download-tile">Paracraft创意空间</h3>
       <p class="homepage-download-hint">7岁以上用户的免费3D创作软件</p>
-      <a class="homepage-download-button" href="#">下载</a>
+      <a class="homepage-download-button" href="/download">下载</a>
     </div>
     <div v-if="videoDialogVisible" class="homepage-video-dialog">
       <el-dialog :visible.sync="videoDialogVisible" width="50%" center>
@@ -152,6 +152,9 @@ export default {
     showVideo(videoUrl) {
       this.currentToPlayerVideo = videoUrl
       this.videoDialogVisible = true
+    },
+    goDownload() {
+      this.$router.push({ name: 'Download' })
     }
   },
   components: {
@@ -174,6 +177,9 @@ export default {
       max-width: 1200px;
       margin: 0 auto;
       padding-top: 360px;
+      &-btn {
+        cursor: pointer;
+      }
       &-btn + &-btn {
         margin-left: 35px;
       }
