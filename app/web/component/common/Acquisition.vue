@@ -52,7 +52,10 @@
       }
       @each $img in 1, 2, 3 {
         .title-#{$img} {
-          background: url('../../asset/images/acquisition/#{$img}--#{$img}.png') center top no-repeat;
+          background: url('../../asset/images/acquisition/#{$img}--#{$img}.png')
+            center
+            top
+            no-repeat;
         }
       }
       &-text {
@@ -71,6 +74,37 @@
         border-radius: 4px;
         text-align: center;
         text-decoration: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .acquisition {
+    padding: 12px;
+    &-title {
+      font-size: 26px;
+    }
+    &-cabinet {
+      display: block;
+      &-box {
+        &-title {
+          height: 57px;
+          line-height: 57px;
+          font-size: 14px;
+        }
+        &-text {
+          margin: 14px;
+        }
+        &-more {
+          height: 32px;
+          line-height: 32px;
+          width: 140px;
+        }
+        width: 80%;
+        max-width: 366px;
+        margin: 20px auto;
+        border-radius: 12px;
+        overflow: hidden;
       }
     }
   }

@@ -3,7 +3,7 @@
     <h3 class="our-advantages-title">我们的优势</h3>
     <div class="our-advantages-box">
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_1">
+        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_1" :autoplay="false">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_1" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -18,17 +18,18 @@
         <p class="our-advantages-box-text-ad">随心所欲创造属于你的3D动画与游戏</p>
       </div>
     </div>
-    <div class="our-advantages-box">
+    <div class="our-advantages-box our-advantages-box-2">
       <div class="our-advantages-box-text our-advantages-box-text-2">
         <h4 class="our-advantages-box-text-title">比Scratch更强大</h4>
         <p :class="['our-advantages-box-text-desc our-advantages-box-text-2-desc',{'is-active-term': currentSlideIndex_2 == index}]" v-for="(item, index) in advantagesCarouselData_2" :key="index">
+          <img class="our-advantages-box-text-desc-icon our-advantages-box-text-2-desc-icon-phone" :src="currentSlideIndex_2 == index ? item.activeIcon : item.icon" alt="">
           {{item.text}}
           <img class="our-advantages-box-text-desc-icon our-advantages-box-text-2-desc-icon" :src="currentSlideIndex_2 == index ? item.activeIcon : item.icon" alt="">
         </p>
         <p class="our-advantages-box-text-ad">从可视化编程，到文本编程，到发布专业应用程序</p>
       </div>
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_2">
+        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_2" :autoplay="false">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_2" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -215,8 +216,71 @@ export default {
       &-desc {
         justify-content: flex-end;
         &-icon {
-          margin:0 0 0 10px;
+          margin: 0 0 0 10px;
+          &-phone {
+            display: none;
+          }
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .our-advantages {
+    padding: 10px 0;
+    &-title {
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: left;
+      padding-left: 10px;
+    }
+    &-box {
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      &-carousel {
+        width: calc(100vw);
+        /deep/ .el-carousel {
+          .el-carousel__container {
+            height: calc(100vw / 666 * 420) !important;
+          }
+        }
+      }
+      &-text {
+        padding: 10px;
+        text-align: left;
+        &-title {
+          font-size: 14px;
+        }
+        &-ad {
+          font-size: 12px;
+        }
+        &-desc {
+          text-align: left;
+          font-size: 12px;
+          padding: 3px;
+          &-icon {
+            transform: rotate(90deg);
+          }
+        }
+        .is-active-term {
+          box-shadow: none;
+          border: solid 1px #3ea2ff;
+        }
+        &-2 {
+          padding: 10px;
+          &-desc {
+            justify-content: flex-start;
+            &-icon {
+              display: none;
+              &-phone {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      &-2 {
+        flex-wrap: wrap-reverse;
       }
     }
   }

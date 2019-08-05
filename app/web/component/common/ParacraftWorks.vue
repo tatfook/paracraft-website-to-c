@@ -1,6 +1,6 @@
 <template>
   <div class="works">
-    <div class="works-say">Paracraft精彩作品</div>
+    <div class="works-title">Paracraft精彩作品</div>
     <div class="works-cabinet">
       <div class="works-cabinet-box" v-for="(item,index) in currentPageData" :key="index">
         <div class="works-cabinet-box-cover" @click="showVideo(item)">
@@ -184,7 +184,7 @@ export default {
       }
     }
   }
-  &-say {
+  &-title {
     text-align: center;
     padding: 0 0 50px;
     font-size: 3 6px;
@@ -200,6 +200,11 @@ export default {
 }
 @media screen and (max-width: 769px) {
   .works {
+    &-title {
+      font-size: 14px;
+      padding: 12px 0  0 12px;
+      text-align: left;
+    }
     &-cabinet {
       padding: 8px;
       min-height: 480px;

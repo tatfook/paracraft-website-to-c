@@ -21,6 +21,25 @@
         <img src="@/asset/images/footerImg/图层288.png" alt="">
       </div>
     </div>
+    <div class="common-footer-phone">
+      <el-collapse v-model="activeName" accordion>
+        <el-collapse-item :title="i.title" name="1" v-for="(i,index) in listData" :key="index">
+          <ul class="common-footer-center-part-2-list">
+            <li class="common-footer-center-part-2-item" v-for="(j, num) in i.secondaryList" :key="num">
+              <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && num == 0 ? '' : '_blank'">{{j.title}}</a>
+            </li>
+          </ul>
+        </el-collapse-item>
+        <el-collapse-item title="找到我们" name="4">
+          <h4 class="common-footer-center-part-2-title">找到我们</h4>
+          <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层284.png" alt=""></a>
+          <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层285.png" alt=""></a>
+        </el-collapse-item>
+        <el-collapse-item title="微信公众号" name="4">
+          <img src="@/asset/images/footerImg/图层288.png" alt="">
+        </el-collapse-item>
+      </el-collapse>
+    </div>
     <p class="common-footer-bottom">© Tatfook | 粤ICP备14002196号 | {{visitCount}} visits today</p>
   </div>
 </template>
@@ -65,7 +84,7 @@ export default {
           ]
         },
         {
-          title: 'Paracraft创意空间',
+          title: '资源',
           secondaryList: [
             {
               title: '学习资源',
@@ -145,6 +164,29 @@ export default {
     color: #fff;
     font-size: 14px;
     text-align: center;
+  }
+  &-phone {
+    display: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .common-footer {
+    padding: 40px 10px;
+    background-size: auto 100%;
+    &-center {
+      display: none;
+    }
+    &-phone {
+      display: block;
+      /deep/ .el-collapse {
+        .el-collapse-item {
+          .el-collapse-item__header {
+            background: none;
+            color: #fff;
+          }
+        }
+      }
+    }
   }
 }
 </style>

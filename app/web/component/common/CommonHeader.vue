@@ -73,4 +73,25 @@ export default {
     float: right !important;
   }
 }
+@media screen and (max-width: 769px){
+.common-header {
+  &-menu {
+    &-logoimg {
+      width: 34px;
+    }
+    &-logo {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &-download-btn,&-homepage-btn {
+      padding: 6px 4px;
+    }
+  }
+  .el-menu--horizontal.el-menu {
+    .el-menu-item {
+      padding: 0 14px;
+    }
+  }
+}   
+}
 </style>

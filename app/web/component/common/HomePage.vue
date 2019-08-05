@@ -38,6 +38,10 @@
         </el-carousel>
       </div>
       <div class="homepage-intro-right">
+        <p :class="['homepage-intro-right-text homepage-intro-right-text-phone', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5">
+          {{item.text}}
+          <img class="homepage-intro-right-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
+        </p>
         <p :class="['homepage-intro-right-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index >= 5">
           {{item.text}}
           <img class="homepage-intro-right-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
@@ -49,7 +53,7 @@
     <parents-and-children-like></parents-and-children-like>
     <acquisition></acquisition>
     <div class="homepage-download">
-      <h3 class="homepage-download-tile">Paracraft创意空间</h3>
+      <h3 class="homepage-download-title">Paracraft创意空间</h3>
       <p class="homepage-download-hint">7岁以上用户的免费3D创作软件</p>
       <a class="homepage-download-button" href="/download">下载</a>
     </div>
@@ -253,7 +257,7 @@ export default {
     }
     &-center {
       width: 605px;
-      min-height: 363px;
+      // min-height: 363px;
       /deep/ .el-carousel {
         width: 605px;
         height: 363px;
@@ -294,6 +298,9 @@ export default {
           position: absolute;
           left: 5px;
           top: 18px;
+        }
+        &-phone {
+          display: none;
         }
       }
       .is-active-term {
@@ -337,7 +344,7 @@ export default {
     text-align: center;
     position: relative;
     background: url('../../asset/images/图层300.png');
-    &-tile {
+    &-title {
       font-size: 36px;
       margin: 60px 0 0;
     }
@@ -360,6 +367,24 @@ export default {
 }
 @media screen and (max-width: 769px) {
   .homepage {
+    &-banner {
+      background: url('../../asset/images/paracraft-phone-bg.png') no-repeat top
+        center;
+      height: auto;
+      &-buttons {
+        padding-top: 160px;
+        display: flex;
+        justify-content: center;
+        &-btn {
+          width: 30%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
     &-video-dialog {
       .el-dialog {
         min-width: 85% !important;
@@ -372,6 +397,79 @@ export default {
             }
           }
         }
+      }
+    }
+    &-phrase {
+      // display: block;
+      flex-wrap: wrap;
+      &-term {
+        width: 47%;
+        justify-content: start;
+        font-size: 12px;
+        padding-left: 5px;
+      }
+    }
+    &-intro {
+      flex-wrap: wrap;
+      padding: 12px 0;
+      &-left {
+        display: none;
+      }
+      &-center {
+        /deep/ .el-carousel {
+          width: 100%;
+          box-sizing: border-box;
+          height: auto;
+          .el-carousel__container {
+            height: calc(100vw / 605 * 363) !important;
+            .el-carousel__item {
+              .homepage-intro-center-img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+      &-right {
+        &-text {
+          padding: 10px 0 10px 34px;
+          font-size: 12px;
+          &-phone {
+            display: block;
+          }
+          &-icon {
+            top: 8px;
+          }
+        }
+        .is-active-term {
+          border: solid 1px #3ea2ff;
+          box-shadow: none;
+        }
+      }
+    }
+    &-paracraft {
+      &-title {
+        font-size: 14px;
+      }
+      &-text {
+        font-size: 12px;
+      }
+    }
+    &-download {
+      &-title {
+        font-size: 14px;
+        margin: 10px;
+      }
+      &-hint {
+        font-size: 12px;
+      }
+      &-button {
+        width: 130px;
+        height: 32px;
+        line-height: 32px;
+        margin: 0 0 22px;
       }
     }
   }
