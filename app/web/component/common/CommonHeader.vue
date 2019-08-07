@@ -21,11 +21,7 @@ export default {
       activeIndex: 'top'
     }
   },
-  watch: {
-    $route(route) {
-      console.log('route', route)
-    }
-  },
+  watch: {},
   computed: {
     isHomepage() {
       return this.$route.name == 'HomePage' ? true : false
