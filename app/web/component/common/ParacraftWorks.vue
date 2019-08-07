@@ -12,9 +12,9 @@
       </div>
     </div>
     <div class="works-paging">
-      <el-button :disabled="currentPage == 0" type="primary" class="works-paging-btn works-paging-btn-left" @click="goPre()"></el-button>
+      <el-button type="primary" class="works-paging-btn works-paging-btn-left" @click="goPre()"></el-button>
       <span :class="['works-paging-dot', {'works-paging-dot-active': currentPage == index}]" v-for="(i,index) in countPage" :key="index" @click="whichPage(index)" @mouseover="whichPage(index)"></span>
-      <el-button :disabled="currentPage == countPage - 1" type="primary" class="works-paging-btn works-paging-btn-right" @click="goNext()"></el-button>
+      <el-button type="primary" class="works-paging-btn works-paging-btn-right" @click="goNext()"></el-button>
     </div>
   </div>
 </template>
@@ -49,11 +49,11 @@ export default {
       this.currentPageData = this.workData.slice(start, end)
     },
     goPre() {
-      this.currentPage = this.currentPage - 1
+      this.currentPage = this.currentPage === 0 ? 4 : this.currentPage - 1
       this.whichPage(this.currentPage)
     },
     goNext() {
-      this.currentPage = this.currentPage + 1
+      this.currentPage = this.currentPage === 4 ? 0 : this.currentPage + 1
       this.whichPage(this.currentPage)
     },
     pageAnimation() {
@@ -188,7 +188,7 @@ export default {
     text-align: center;
     padding: 0 0 50px;
     font-size: 3 6px;
-    padding:  68px 0 66px;
+    padding: 68px 0 66px;
     font-size: 36px;
     color: #333;
     font-weight: 700;
@@ -202,7 +202,7 @@ export default {
   .works {
     &-title {
       font-size: 14px;
-      padding: 12px 0  0 12px;
+      padding: 12px 0 0 12px;
       text-align: left;
     }
     &-cabinet {
@@ -225,7 +225,7 @@ export default {
           padding: 4px 30px 4px 4px;
           font-weight: normal;
           &-type {
-            padding:0 5px;
+            padding: 0 5px;
             top: 4px;
             right: 4px;
             font-size: 12px;

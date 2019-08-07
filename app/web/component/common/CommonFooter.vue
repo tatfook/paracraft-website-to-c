@@ -60,6 +60,7 @@ export default {
   },
   data() {
     return {
+      activeName: '0',
       visitCount: 0,
       listData: [
         {
