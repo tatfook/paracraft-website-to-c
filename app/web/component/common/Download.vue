@@ -197,10 +197,10 @@ export default {
           font-size: 14px;
           color: #8d8d8d;
           &-phone {
-            max-width: 154px;
+            max-width: 164px;
             color: #32b16c;
             margin: 0 auto;
-            font-size: 14px;
+            font-size: 16px;
             display: block;
             cursor: pointer;
             text-decoration: none;

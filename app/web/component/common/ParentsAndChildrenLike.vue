@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .parents-and-children-like {
-  padding: 60px 0;
+  padding: 60px 0 30px;
   &-title {
     font-size: 36px;
     color: #333;
@@ -64,6 +64,7 @@ export default {
     margin: 0 auto;
     /deep/ .el-carousel {
       .el-carousel__container {
+        height: 240px;
         .el-carousel__arrow {
           background: #4aa8ff;
         }

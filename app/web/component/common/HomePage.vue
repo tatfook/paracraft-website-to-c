@@ -250,8 +250,8 @@ export default {
       color: #333;
       &-text {
         position: relative;
-        margin: 0 10px;
-        padding: 20px 34px 20px 0;
+        margin: 0 20px;
+        padding: 20px 40px 20px 0;
         &-icon {
           position: absolute;
           right: 5px;
@@ -302,8 +302,8 @@ export default {
       color: #333;
       &-text {
         position: relative;
-        margin: 0 10px;
-        padding: 20px 0 20px 34px;
+        margin: 0 20px;
+        padding: 20px 0 20px 40px;
         &-icon {
           position: absolute;
           left: 5px;
@@ -371,7 +371,7 @@ export default {
       display: inline-block;
       color: #fff;
       text-decoration: none;
-      margin: 0 0 190px;
+      margin: 0 0 86px;
     }
   }
 }
