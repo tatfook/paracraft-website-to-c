@@ -91,6 +91,20 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'Download',
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    document.title = '下载-Paracraft创意空间'
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .download {
   &-welcome {

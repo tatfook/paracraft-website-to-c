@@ -25,13 +25,13 @@
     </div>
     <div class="homepage-intro">
       <div class="homepage-intro-left">
-        <p :class="['homepage-intro-left-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5">
+        <p :class="['homepage-intro-left-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5"  @mouseover="locateCurrentImg(index)" @mouseout="toAutoplay()">
           {{item.text}}
           <img class="homepage-intro-left-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
       </div>
       <div class="homepage-intro-center">
-        <el-carousel height="363px" @change="currentSlide">
+        <el-carousel height="363px" ref="centerCarousel" @change="currentSlide" :autoplay="isAutoplay">
           <el-carousel-item v-for="(item, index) in introCarouselData" :key="index">
             <img class="homepage-intro-center-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -42,7 +42,7 @@
           {{item.text}}
           <img class="homepage-intro-right-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
-        <p :class="['homepage-intro-right-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index >= 5">
+        <p :class="['homepage-intro-right-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index >= 5" @mouseover="locateCurrentImg(index)" @mouseout="toAutoplay()">
           {{item.text}}
           <img class="homepage-intro-right-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
@@ -79,6 +79,7 @@ export default {
   name: 'HomePage',
   data() {
     return {
+      isAutoplay: true,
       videoDialogVisible: false,
       currentSlideIndex: 0,
       introCarouselData: [
@@ -148,8 +149,17 @@ export default {
       ]
     }
   },
-  mounted() {},
+  mounted() {
+    document.title = 'Paracraft创意空间-更适合青少年的3D动画创作与编程学习工具'
+  },
   methods: {
+    locateCurrentImg(i) {
+      this.$refs.centerCarousel.setActiveItem(i)
+      this.isAutoplay = false
+    },
+    toAutoplay() {
+      this.isAutoplay = true
+    },
     currentSlide(index) {
       this.currentSlideIndex = index
     },

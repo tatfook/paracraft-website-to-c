@@ -65,6 +65,15 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'Paracraft',
+  mounted() {
+    document.title = 'Paracraft的故事-Paracraft创意空间'
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .paracraft-story {
   background: rgb(242, 242, 242);
