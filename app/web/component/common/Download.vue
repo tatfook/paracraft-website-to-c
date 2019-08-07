@@ -243,5 +243,76 @@
     }
   }
 }
+@media screen and (max-width: 769px) {
+  .download {
+    &-welcome {
+      &-center {
+        padding-left: 12px;
+        &-title {
+          font-size: 14px;
+          padding: 12px 0 0 0;
+        }
+        &-version {
+          font-size: 12px;
+          &-new {
+          }
+        }
+        &-count {
+          font-size: 12px;
+        }
+      }
+    }
+    &-center {
+      &-guide {
+        font-size: 14px;
+      }
+      &-cabinet {
+        flex-wrap: wrap;
+        padding-top: 12px;
+        &-box {
+          min-width: 200px;
+          border-bottom: 10px solid rgb(249, 249, 249);
+          padding: 26px 0;
+          &-hint {
+            font-size: 12px;
+          }
+        }
+      }
+      &-paracraft {
+        &-title {
+          font-size: 14px;
+          padding-left: 12px;
+          margin-top: 17px;
+        }
+        &-hint {
+          font-size: 12px;
+          padding: 0 12px;
+        }
+      }
+    }
+    &-abstract {
+      background: #fff;
+      border-top: 10px solid rgb(249, 249, 249);
+      border-bottom: 10px solid rgb(249, 249, 249);
+      &-intro {
+        flex-wrap: wrap;
+        &-box {
+          min-width: 260px;
+          margin: 12px;
+          &-content {
+            width: 100%;
+            max-width: 480px;
+            &-title {
+              font-size: 14px;
+            }
+            &-text {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 

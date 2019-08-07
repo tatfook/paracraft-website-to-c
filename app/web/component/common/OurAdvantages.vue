@@ -3,7 +3,7 @@
     <h3 class="our-advantages-title">我们的优势</h3>
     <div class="our-advantages-box">
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_1" :autoplay="false">
+        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_1">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_1" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -29,7 +29,7 @@
         <p class="our-advantages-box-text-ad">从可视化编程，到文本编程，到发布专业应用程序</p>
       </div>
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_2" :autoplay="false">
+        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_2">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_2" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>

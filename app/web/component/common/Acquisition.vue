@@ -82,7 +82,8 @@
   .acquisition {
     padding: 12px;
     &-title {
-      font-size: 26px;
+      font-size: 14px;
+      padding-left: 12px;
     }
     &-cabinet {
       display: block;

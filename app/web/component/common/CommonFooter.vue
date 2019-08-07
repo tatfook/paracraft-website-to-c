@@ -23,7 +23,7 @@
     </div>
     <div class="common-footer-phone">
       <el-collapse v-model="activeName" accordion>
-        <el-collapse-item :title="i.title" name="1" v-for="(i,index) in listData" :key="index">
+        <el-collapse-item :title="i.title" :name="index" v-for="(i,index) in listData" :key="index">
           <ul class="common-footer-center-part-2-list">
             <li class="common-footer-center-part-2-item" v-for="(j, num) in i.secondaryList" :key="num">
               <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && num == 0 ? '' : '_blank'">{{j.title}}</a>
@@ -35,7 +35,7 @@
           <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层284.png" alt=""></a>
           <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层285.png" alt=""></a>
         </el-collapse-item>
-        <el-collapse-item title="微信公众号" name="4">
+        <el-collapse-item title="微信公众号" name="5">
           <img src="@/asset/images/footerImg/图层288.png" alt="">
         </el-collapse-item>
       </el-collapse>
@@ -183,6 +183,9 @@ export default {
           .el-collapse-item__header {
             background: none;
             color: #fff;
+          }
+          .el-collapse-item__wrap {
+            background: transparent;
           }
         }
       }

@@ -110,7 +110,9 @@ export default {
 @media screen and (max-width: 769px) {
   .parents-and-children-like {
   &-title {
-    font-size: 26px;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 12px;
   }
     &-carousel {
       /deep/ .el-carousel {
