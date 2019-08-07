@@ -77,6 +77,8 @@ export default {
 .works {
   background: #f5faff;
   padding-bottom: 70px;
+  max-width: 1920px;
+  margin: 0 auto;
   &-cabinet {
     max-width: 1200px;
     margin: 0 auto;

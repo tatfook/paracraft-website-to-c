@@ -221,6 +221,8 @@ export default {
     text-align: center;
     padding: 30px 0 67px;
     background: #e5b04a;
+    max-width: 1920px;
+    margin: 0 auto;
     color: #fff;
     &-title {
       font-size: 36px;
@@ -242,6 +244,8 @@ export default {
     display: flex;
     padding: 70px 0;
     justify-content: center;
+    max-width: 1920px;
+    margin: 0 auto;
     &-left {
       width: 308px;
       text-align: right;
@@ -353,7 +357,10 @@ export default {
     color: #333333;
     text-align: center;
     position: relative;
-    background: url('../../asset/images/图层300.png');
+    margin: 0 auto;
+    max-width: 1920px;
+    background: url('../../asset/images/图层300.png') top center;
+    background-size: 100% 120%;
     &-title {
       font-size: 36px;
       margin: 60px 0 0;

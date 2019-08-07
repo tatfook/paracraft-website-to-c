@@ -22,7 +22,8 @@
 </template>
 <style lang="scss" scoped>
 .acquisition {
-  // min-height: 578px;
+  max-width: 1920px;
+  margin: 0 auto;
   padding: 60px 0 79px;
   background: url('../../asset/images/acquisition/bg.png') no-repeat top center;
   &-title {
