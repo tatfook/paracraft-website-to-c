@@ -3,7 +3,7 @@
     <h3 class="our-advantages-title">我们的优势</h3>
     <div class="our-advantages-box">
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_1">
+        <el-carousel height="397px" ref="centerCarousel_1" indicator-position="outside" @change="currentSlide_1" :autoplay="isAutoplay_1">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_1" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -11,7 +11,7 @@
       </div>
       <div class="our-advantages-box-text">
         <h4 class="our-advantages-box-text-title">比Minecraft更进一步</h4>
-        <p :class="['our-advantages-box-text-desc',{'is-active-term': currentSlideIndex_1 == index}]" v-for="(item, index) in advantagesCarouselData_1" :key="index">
+        <p :class="['our-advantages-box-text-desc',{'is-active-term': currentSlideIndex_1 == index}]" v-for="(item, index) in advantagesCarouselData_1" :key="index" @mouseover="locateCurrentImg(1)(index)" @mouseout="toAutoplay(1)">
           <img class="our-advantages-box-text-desc-icon" :src="currentSlideIndex_1 == index ? item.activeIcon : item.icon" alt="">
           {{item.text}}
         </p>
@@ -21,7 +21,7 @@
     <div class="our-advantages-box our-advantages-box-2">
       <div class="our-advantages-box-text our-advantages-box-text-2">
         <h4 class="our-advantages-box-text-title">比Scratch更强大</h4>
-        <p :class="['our-advantages-box-text-desc our-advantages-box-text-2-desc',{'is-active-term': currentSlideIndex_2 == index}]" v-for="(item, index) in advantagesCarouselData_2" :key="index">
+        <p :class="['our-advantages-box-text-desc our-advantages-box-text-2-desc',{'is-active-term': currentSlideIndex_2 == index}]" v-for="(item, index) in advantagesCarouselData_2" :key="index" @mouseover="locateCurrentImg(2)(index)" @mouseout="toAutoplay(2)">
           <img class="our-advantages-box-text-desc-icon our-advantages-box-text-2-desc-icon-phone" :src="currentSlideIndex_2 == index ? item.activeIcon : item.icon" alt="">
           {{item.text}}
           <img class="our-advantages-box-text-desc-icon our-advantages-box-text-2-desc-icon" :src="currentSlideIndex_2 == index ? item.activeIcon : item.icon" alt="">
@@ -29,7 +29,7 @@
         <p class="our-advantages-box-text-ad">从可视化编程，到文本编程，到发布专业应用程序</p>
       </div>
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_2">
+        <el-carousel height="397px" ref="centerCarousel_2" indicator-position="outside" @change="currentSlide_2" :autoplay="isAutoplay_2">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_2" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -38,7 +38,7 @@
     </div>
     <div class="our-advantages-box">
       <div class="our-advantages-box-carousel">
-        <el-carousel height="397px" indicator-position="outside" @change="currentSlide_3">
+        <el-carousel height="397px" ref="centerCarousel_3" indicator-position="outside" @change="currentSlide_3" :autoplay="isAutoplay_3">
           <el-carousel-item v-for="(item, index) in advantagesCarouselData_3" :key="index">
             <img class="our-advantages-box-carousel-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -46,7 +46,7 @@
       </div>
       <div class="our-advantages-box-text">
         <h4 class="our-advantages-box-text-title">不只是教学工具</h4>
-        <p :class="['our-advantages-box-text-desc',{'is-active-term': currentSlideIndex_3 == index}]" v-for="(item, index) in advantagesCarouselData_3" :key="index">
+        <p :class="['our-advantages-box-text-desc',{'is-active-term': currentSlideIndex_3 == index}]" v-for="(item, index) in advantagesCarouselData_3" :key="index" @mouseover="locateCurrentImg(3)(index)" @mouseout="toAutoplay(3)">
           <img class="our-advantages-box-text-desc-icon" :src="currentSlideIndex_3 == index ? item.activeIcon : item.icon" alt="">
           {{item.text}}
         </p>
@@ -63,6 +63,9 @@ export default {
       currentSlideIndex_1: 0,
       currentSlideIndex_2: 0,
       currentSlideIndex_3: 0,
+      isAutoplay_1: true,
+      isAutoplay_2: true,
+      isAutoplay_3: true,
       advantagesCarouselData_1: [
         {
           imgUrl: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/1 完善的3D场景编辑器.png'),
@@ -152,6 +155,15 @@ export default {
     },
     currentSlide_3(index) {
       this.currentSlideIndex_3 = index
+    },
+    locateCurrentImg(suffix) {
+      return i => {
+        this.$refs[`centerCarousel_${suffix}`].setActiveItem(i)
+        this[`isAutoplay_${suffix}`] = false
+      }
+    },
+    toAutoplay(suffix) {
+      this[`isAutoplay_${suffix}`] = true
     }
   }
 }
