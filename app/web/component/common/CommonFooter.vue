@@ -14,8 +14,6 @@
       </div>
       <div class="common-footer-center-part-3">
         <h4 class="common-footer-center-part-2-title">找到我们</h4>
-        <!-- <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/未点击(2).png" alt=""></a>
-        <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/未点击(1).png" alt=""></a> -->
         <a href="https://weibo.com/u/5676054156" target="_blank" class="common-footer-center-part-3-img"></a>
         <a href="mailto:lixizhi@paraengine.com" class="common-footer-center-part-3-img common-footer-center-part-3-img-email"></a>
       </div>
@@ -43,7 +41,7 @@
         </el-collapse-item>
       </el-collapse>
     </div>
-    <p class="common-footer-bottom">© Tatfook | 粤ICP备14002196号 | {{visitCount}} visits today</p>
+    <p class="common-footer-bottom">© Tatfook | <a class="common-footer-bottom-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602002093" target="_blank">粤ICP备14002196号</a> | {{visitCount}} visits today</p>
   </div>
 </template>
 <script>
@@ -96,7 +94,7 @@ export default {
             },
             {
               title: '更新日志',
-              linkUrl: ''
+              linkUrl: 'https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019'
             }
           ]
         },
@@ -160,10 +158,10 @@ export default {
       width: 156px;
       margin-left: 200px;
       &-img {
+        margin: 23px 20px 0 0;
         width: 40px;
         height: 40px;
         display: inline-block;
-        margin-right: 20px;
         background: url('../../asset/images/footerImg/未点击(2).png') no-repeat
           center center;
         background-size: 100%;
@@ -186,6 +184,7 @@ export default {
     }
     &-part-4 {
       text-align: center;
+      padding-top: 9px;
       &-text {
         color: #fff;
         font-size: 14px;
@@ -197,6 +196,13 @@ export default {
     color: #fff;
     font-size: 14px;
     text-align: center;
+    &-link {
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: rgb(211, 204, 204);
+      }
+    }
   }
   &-phone {
     display: none;

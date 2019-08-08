@@ -16,7 +16,7 @@
       <p>2014年初至今，我的全部精力都在思考和编程上，这是我进入社会后，进步最快的一年。人，大学，社会，编程，产品，企业，世界，这些事物其实都是相似 的，真相总是躲在相似的背后，却被世人说得异常复杂而生迷茫。就仿佛Paracraft在用方块表达整个世界，能看到相似的用户，就能爱上这款产品；不懂 的人则永远不会理解。</p>
       <h4 class="paracraft-story-content-slogan">2. 我们已经解决和已知的问题</h4>
       <p>Paracraft创意空间这款产品刚刚起步，只做了不到1/10的内容。这1/10中，也还有好多的Bug。对于本次发布的手机版：我的目标是能够流畅 的播放所有PC端的作品。目前的版本，应该做到了。带着测试的目的我们选择公开发行目前的版本，同时也是希望电影导演们能将自己的作品展现给更多身边的 人。</p>
-      <p>我自己有一个列表，记录了数百个有待解决的问题或需求。但时间有限，发布前我只重点解决了核心的电影播放问题。下面列举一些常见问题，除此之外的任何问题，希望电影导演和用户们可以提交到我们的官方网站 <a href="http://www.paracraft.cn/" target="_blank">http://www.paracraft.cn/。</a></p>
+      <p>我自己有一个列表，记录了数百个有待解决的问题或需求。但时间有限，发布前我只重点解决了核心的电影播放问题。下面列举一些常见问题，除此之外的任何问题，希望电影导演和用户们可以提交到我们的官方网站 <a href="http://www.paracraft.cn/" class="paracraft-story-content-link" target="_blank">http://www.paracraft.cn/。</a></p>
 
       <p>
         我们已经知道的问题如下：<br>
@@ -76,17 +76,24 @@ export default {
 
 <style lang="scss" scoped>
 .paracraft-story {
-  background: rgb(242, 242, 242);
   padding: 1px;
+  color: #333;
+  padding: 12px;
   &-content {
+    &-link {
+    }
     max-width: 1200px;
     margin: 0 auto;
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
     &-top {
       font-size: 28px;
     }
     &-title {
       text-align: center;
-      font-size: 28px;
+      font-size: 24px;
     }
     &-author {
       font-size: 18px;
@@ -94,7 +101,7 @@ export default {
       margin: 6px;
     }
     &-slogan {
-      margin: 60px 0 0 0;
+      margin: 30px 0 0 0;
     }
   }
 }
