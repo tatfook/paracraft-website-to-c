@@ -73,10 +73,10 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .works {
   background: #f5faff;
-  padding-bottom: 70px;
+  padding-bottom: 66px;
   max-width: 1920px;
   margin: 0 auto;
   &-cabinet {
@@ -149,11 +149,11 @@ export default {
     align-items: center;
     cursor: pointer;
     &-dot {
-      width: 10px;
-      height: 10px;
+      width: 32px;
+      height: 3px;
       display: inline-block;
       background: #e3e6eb;
-      border-radius: 50%;
+      border-radius: 1px;
       margin: 0 7px;
       &-active {
         background: #6ab7f9;
@@ -161,21 +161,26 @@ export default {
     }
     &-btn {
       display: inline-block;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       padding: 0;
       border-radius: 50%;
-      background: #6ab7f9;
+      background: #b8c0cc;
       position: relative;
+      border: 1px solid #b8c0cc;
       cursor: pointer;
+      &:hover {
+        background-color: #4aa8ff;
+        border: 1px solid #4aa8ff;
+      }
       &::before {
         position: absolute;
-        top: 8px;
+        top: 10px;
         left: 12px;
         content: '';
         border: 1px solid #fff;
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
         display: inline-block;
         border-right-color: transparent;
         border-top-color: transparent;
@@ -190,7 +195,7 @@ export default {
     text-align: center;
     padding: 0 0 50px;
     font-size: 3 6px;
-    padding: 68px 0 66px;
+    padding: 68px 0 28px;
     font-size: 36px;
     color: #333;
     font-weight: 700;

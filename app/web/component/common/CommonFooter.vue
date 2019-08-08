@@ -14,11 +14,14 @@
       </div>
       <div class="common-footer-center-part-3">
         <h4 class="common-footer-center-part-2-title">找到我们</h4>
-        <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层284.png" alt=""></a>
-        <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层285.png" alt=""></a>
+        <!-- <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/未点击(2).png" alt=""></a>
+        <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/未点击(1).png" alt=""></a> -->
+        <a href="https://weibo.com/u/5676054156" target="_blank" class="common-footer-center-part-3-img"></a>
+        <a href="mailto:lixizhi@paraengine.com" class="common-footer-center-part-3-img common-footer-center-part-3-img-email"></a>
       </div>
       <div class="common-footer-center-part-4">
         <img src="@/asset/images/footerImg/图层288.png" alt="">
+        <p class="common-footer-center-part-4-text">公众号：paracraft</p>
       </div>
     </div>
     <div class="common-footer-phone">
@@ -147,6 +150,9 @@ export default {
           text-decoration: none;
           line-height: 32px;
           font-size: 14px;
+          &:hover {
+            color: #fff;
+          }
         }
       }
     }
@@ -154,11 +160,37 @@ export default {
       width: 156px;
       margin-left: 200px;
       &-img {
-        width: 55px;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
         margin-right: 20px;
+        background: url('../../asset/images/footerImg/未点击(2).png') no-repeat
+          center center;
+        background-size: 100%;
+        &:hover {
+          background: url('../../asset/images/footerImg/图层284.png') no-repeat
+            center center;
+          background-size: 100%;
+        }
+      }
+      &-img-email {
+        background: url('../../asset/images/footerImg/未点击(1).png') no-repeat
+          center center;
+        background-size: 100%;
+        &:hover {
+          background: url('../../asset/images/footerImg/图层285.png') no-repeat
+            center center;
+          background-size: 100%;
+        }
       }
     }
     &-part-4 {
+      text-align: center;
+      &-text {
+        color: #fff;
+        font-size: 14px;
+        margin: 2px 0;
+      }
     }
   }
   &-bottom {

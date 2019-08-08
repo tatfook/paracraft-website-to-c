@@ -170,19 +170,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 .our-advantages {
-  padding: 70px 0 0;
+  padding: 64px 0 0;
   margin: 0 auto;
   max-width: 1200px;
   &-title {
     font-size: 36px;
     color: #333;
     text-align: center;
-    margin: 0 0 70px;
+    margin: 0 0 8px;
   }
   &-box {
     display: flex;
     padding: 25px 0 0 0;
-    border-top: solid 1px #ededed;
+    & + .our-advantages-box {
+      border-top: solid 1px #ededed;
+    }
     margin-bottom: 66px;
     &-carousel {
       width: 666px;
@@ -206,7 +208,7 @@ export default {
       &-desc {
         display: flex;
         align-items: center;
-        color: #8d8d8d;
+        color: #333;
         padding: 10px;
         &-icon {
           margin-right: 10px;
@@ -229,6 +231,7 @@ export default {
         justify-content: flex-end;
         &-icon {
           margin: 0 0 0 10px;
+          transform: rotate(180deg);
           &-phone {
             display: none;
           }

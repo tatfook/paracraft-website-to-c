@@ -25,7 +25,7 @@
     </div>
     <div class="homepage-intro">
       <div class="homepage-intro-left">
-        <p :class="['homepage-intro-left-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5"  @mouseover="locateCurrentImg(index)" @mouseout="toAutoplay()">
+        <p :class="['homepage-intro-left-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5" @mouseover="locateCurrentImg(index)" @mouseout="toAutoplay()">
           {{item.text}}
           <img class="homepage-intro-left-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
@@ -186,11 +186,11 @@ export default {
   &-banner {
     background: url('../../asset/images/首页海报.png') no-repeat top center
       rgb(249, 249, 249);
-    height: 643px;
+    height: 570px;
     &-buttons {
       max-width: 1200px;
       margin: 0 auto;
-      padding-top: 360px;
+      padding-top: 290px;
       &-btn {
         cursor: pointer;
       }
@@ -201,7 +201,7 @@ export default {
   }
   &-phrase {
     max-width: 1300px;
-    margin: 70px auto;
+    margin: 16px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -220,10 +220,11 @@ export default {
   &-paracraft {
     text-align: center;
     padding: 30px 0 67px;
-    background: #e5b04a;
+    background: #ffdf47;
+    box-shadow: 0px 1px 1px 0px rgba(166, 166, 166, 0.4);
     max-width: 1920px;
     margin: 0 auto;
-    color: #fff;
+    color: #333;
     &-title {
       font-size: 36px;
     }
@@ -359,7 +360,6 @@ export default {
     position: relative;
     margin: 0 auto;
     max-width: 1920px;
-    background: url('../../asset/images/图层300.png') top center;
     background-size: 100% 120%;
     &-title {
       font-size: 36px;
@@ -373,12 +373,15 @@ export default {
       width: 230px;
       height: 49px;
       line-height: 49px;
-      background-color: #ff8150;
+      background-color: #4aa8ff;
       border-radius: 4px;
       display: inline-block;
       color: #fff;
       text-decoration: none;
       margin: 0 0 86px;
+      &:hover {
+        background: rgb(51, 143, 229);
+      }
     }
   }
 }
