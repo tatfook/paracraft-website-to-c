@@ -12,9 +12,9 @@
       </div>
     </div>
     <div class="works-paging">
-      <el-button :disabled="currentPage == 0" type="primary" class="works-paging-btn works-paging-btn-left" @click="goPre()"></el-button>
+      <el-button type="primary" class="works-paging-btn works-paging-btn-left" @click="goPre()"></el-button>
       <span :class="['works-paging-dot', {'works-paging-dot-active': currentPage == index}]" v-for="(i,index) in countPage" :key="index" @click="whichPage(index)" @mouseover="whichPage(index)"></span>
-      <el-button :disabled="currentPage == countPage - 1" type="primary" class="works-paging-btn works-paging-btn-right" @click="goNext()"></el-button>
+      <el-button type="primary" class="works-paging-btn works-paging-btn-right" @click="goNext()"></el-button>
     </div>
   </div>
 </template>
@@ -49,11 +49,11 @@ export default {
       this.currentPageData = this.workData.slice(start, end)
     },
     goPre() {
-      this.currentPage = this.currentPage - 1
+      this.currentPage = this.currentPage === 0 ? 4 : this.currentPage - 1
       this.whichPage(this.currentPage)
     },
     goNext() {
-      this.currentPage = this.currentPage + 1
+      this.currentPage = this.currentPage === 4 ? 0 : this.currentPage + 1
       this.whichPage(this.currentPage)
     },
     pageAnimation() {
@@ -73,10 +73,12 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .works {
   background: #f5faff;
-  padding-bottom: 70px;
+  padding-bottom: 66px;
+  max-width: 1920px;
+  margin: 0 auto;
   &-cabinet {
     max-width: 1200px;
     margin: 0 auto;
@@ -147,33 +149,39 @@ export default {
     align-items: center;
     cursor: pointer;
     &-dot {
-      width: 10px;
-      height: 10px;
+      width: 30px;
+      height: 2px;
       display: inline-block;
-      background: #e3e6eb;
-      border-radius: 50%;
-      margin: 0 7px;
+      background: #b8c0cc;;
+      border-radius: 1px;
+      margin: 0 4px;
       &-active {
-        background: #6ab7f9;
+        background: #409eff;
       }
     }
     &-btn {
       display: inline-block;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       padding: 0;
       border-radius: 50%;
-      background: #6ab7f9;
+      background: #b8c0cc;
       position: relative;
+      border: 1px solid #b8c0cc;
       cursor: pointer;
+      margin: 0 58px;
+      &:hover {
+        background-color: #4aa8ff;
+        border: 1px solid #4aa8ff;
+      }
       &::before {
         position: absolute;
-        top: 8px;
+        top: 10px;
         left: 12px;
         content: '';
         border: 1px solid #fff;
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
         display: inline-block;
         border-right-color: transparent;
         border-top-color: transparent;
@@ -188,7 +196,7 @@ export default {
     text-align: center;
     padding: 0 0 50px;
     font-size: 3 6px;
-    padding:  68px 0 66px;
+    padding: 68px 0 28px;
     font-size: 36px;
     color: #333;
     font-weight: 700;
@@ -202,7 +210,7 @@ export default {
   .works {
     &-title {
       font-size: 14px;
-      padding: 12px 0  0 12px;
+      padding: 12px 0 0 12px;
       text-align: left;
     }
     &-cabinet {
@@ -225,7 +233,7 @@ export default {
           padding: 4px 30px 4px 4px;
           font-weight: normal;
           &-type {
-            padding:0 5px;
+            padding: 0 5px;
             top: 4px;
             right: 4px;
             font-size: 12px;

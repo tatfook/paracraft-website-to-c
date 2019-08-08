@@ -14,16 +14,17 @@
       </div>
       <div class="common-footer-center-part-3">
         <h4 class="common-footer-center-part-2-title">找到我们</h4>
-        <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层284.png" alt=""></a>
-        <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层285.png" alt=""></a>
+        <a href="https://weibo.com/u/5676054156" target="_blank" class="common-footer-center-part-3-img"></a>
+        <a href="mailto:lixizhi@paraengine.com" class="common-footer-center-part-3-img common-footer-center-part-3-img-email"></a>
       </div>
       <div class="common-footer-center-part-4">
         <img src="@/asset/images/footerImg/图层288.png" alt="">
+        <p class="common-footer-center-part-4-text">公众号：paracraft</p>
       </div>
     </div>
     <div class="common-footer-phone">
       <el-collapse v-model="activeName" accordion>
-        <el-collapse-item :title="i.title" name="1" v-for="(i,index) in listData" :key="index">
+        <el-collapse-item :title="i.title" :name="index" v-for="(i,index) in listData" :key="index">
           <ul class="common-footer-center-part-2-list">
             <li class="common-footer-center-part-2-item" v-for="(j, num) in i.secondaryList" :key="num">
               <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && num == 0 ? '' : '_blank'">{{j.title}}</a>
@@ -35,12 +36,12 @@
           <a href="https://weibo.com/u/5676054156" target="_blank"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层284.png" alt=""></a>
           <a href="mailto:lixizhi@paraengine.com"><img class="common-footer-center-part-3-img" src="@/asset/images/footerImg/图层285.png" alt=""></a>
         </el-collapse-item>
-        <el-collapse-item title="微信公众号" name="4">
+        <el-collapse-item title="微信公众号" name="5">
           <img src="@/asset/images/footerImg/图层288.png" alt="">
         </el-collapse-item>
       </el-collapse>
     </div>
-    <p class="common-footer-bottom">© Tatfook | 粤ICP备14002196号 | {{visitCount}} visits today</p>
+    <p class="common-footer-bottom">© Tatfook | <a class="common-footer-bottom-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602002093" target="_blank">粤ICP备14002196号</a> | {{visitCount}} visits today</p>
   </div>
 </template>
 <script>
@@ -60,6 +61,7 @@ export default {
   },
   data() {
     return {
+      activeName: '0',
       visitCount: 0,
       listData: [
         {
@@ -92,7 +94,7 @@ export default {
             },
             {
               title: '更新日志',
-              linkUrl: ''
+              linkUrl: 'https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019'
             }
           ]
         },
@@ -146,6 +148,9 @@ export default {
           text-decoration: none;
           line-height: 32px;
           font-size: 14px;
+          &:hover {
+            color: #fff;
+          }
         }
       }
     }
@@ -153,17 +158,51 @@ export default {
       width: 156px;
       margin-left: 200px;
       &-img {
-        width: 55px;
-        margin-right: 20px;
+        margin: 23px 20px 0 0;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: url('../../asset/images/footerImg/未点击(2).png') no-repeat
+          center center;
+        background-size: 100%;
+        &:hover {
+          background: url('../../asset/images/footerImg/图层284.png') no-repeat
+            center center;
+          background-size: 100%;
+        }
+      }
+      &-img-email {
+        background: url('../../asset/images/footerImg/未点击(1).png') no-repeat
+          center center;
+        background-size: 100%;
+        &:hover {
+          background: url('../../asset/images/footerImg/图层285.png') no-repeat
+            center center;
+          background-size: 100%;
+        }
       }
     }
     &-part-4 {
+      text-align: center;
+      padding-top: 9px;
+      &-text {
+        color: #fff;
+        font-size: 14px;
+        margin: 2px 0;
+      }
     }
   }
   &-bottom {
     color: #fff;
     font-size: 14px;
     text-align: center;
+    &-link {
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: rgb(211, 204, 204);
+      }
+    }
   }
   &-phone {
     display: none;
@@ -183,6 +222,9 @@ export default {
           .el-collapse-item__header {
             background: none;
             color: #fff;
+          }
+          .el-collapse-item__wrap {
+            background: transparent;
           }
         }
       }

@@ -4,15 +4,17 @@
       孩子、父母和老师都喜欢Paracraft
     </h3>
     <div class="parents-and-children-like-carousel">
-      <el-carousel indicator-position="outside" arrow="always" :autoplay="false">
+      <el-carousel indicator-position="outside" arrow="always">
         <el-carousel-item v-for="(item,index) in statementData" :key="index">
           <div class="carousel-box">
             <div class="carousel-box-left">
               <img class="carousel-box-left-img" :src="item.portrait" alt="">
-              <p class="carousel-box-left-text">{{item.name}}</p>
             </div>
             <div class="carousel-box-right">
-              <p>{{item.text}}</p>
+              <div class="carousel-box-right-desc">
+                <p class="carousel-box-right-desc-text">{{item.name}}</p>
+                <p class="carousel-box-right-desc-words">{{item.text}}</p>
+              </div>
             </div>
           </div>
         </el-carousel-item>
@@ -40,7 +42,7 @@ export default {
         },
         {
           portrait: require('@/asset/images/parentsIcon/图层302.png'),
-          name: '老师：高老师，机构老师 ',
+          name: '高老师，机构老师 ',
           text:
             'Paracraft是3D动画与编程相结合，我们在传授孩子编程知识的同时，孩子写的代码能在动画中验证是否正确，很有吸引力。玩乐中去思考，玩乐中学习编程，很棒。'
         }
@@ -52,11 +54,14 @@ export default {
 
 <style lang="scss" scoped>
 .parents-and-children-like {
-  padding: 60px 0;
+  padding: 60px 0 30px;
+  background: rgb(245, 245, 245);
+  margin: 0 auto;
+  max-width: 1920px;
   &-title {
     font-size: 36px;
     color: #333;
-    margin: 0 0 50px;
+    margin: 0 0 10px;
     text-align: center;
   }
   &-carousel {
@@ -64,35 +69,50 @@ export default {
     margin: 0 auto;
     /deep/ .el-carousel {
       .el-carousel__container {
+        height: 200px;
         .el-carousel__arrow {
-          background: #4aa8ff;
+          background: #b8c0cc;
+          width: 32px;
+          height: 32px;
+          &:hover {
+            border: 1px solid #4aa8ff;
+            background-color: #4aa8ff;
+          }
         }
         .el-carousel__item {
           display: flex;
           justify-content: center;
           .carousel-box {
-            // border: 1px solid red;
             display: flex;
-            // justify-content: center;
             &-left {
               width: 156px;
-              padding: 60px 0 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               &-img {
                 width: 126px;
                 height: 126px;
-                // border: 1px solid red;
                 border-radius: 50%;
-              }
-              &-text {
-                font-size: 14px;
-                color: #8d8d8d;
               }
             }
             &-right {
               width: 675px;
-              // border: 1px solid red;
-              padding: 60px 0 0 33px;
               line-height: 32px;
+              display: flex;
+              align-items: center;
+              &-desc {
+                padding-left: 12px;
+                &-text {
+                  font-size: 14px;
+                  color: #8d8d8d;
+                  margin: 0;
+                }
+                &-words {
+                  color: #333;
+                  font-size: 16px;
+                  margin: 4px 0;
+                }
+              }
             }
           }
         }
@@ -109,9 +129,11 @@ export default {
 }
 @media screen and (max-width: 769px) {
   .parents-and-children-like {
-  &-title {
-    font-size: 26px;
-  }
+    &-title {
+      font-size: 14px;
+      text-align: left;
+      padding-left: 12px;
+    }
     &-carousel {
       /deep/ .el-carousel {
         .el-carousel__container {

@@ -22,13 +22,16 @@
 </template>
 <style lang="scss" scoped>
 .acquisition {
-  // min-height: 578px;
-  padding: 60px 0 79px;
-  background: url('../../asset/images/acquisition/bg.png') no-repeat top center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 30px 0 66px;
+  background: url('../../asset/images/acquisition/bg.png') no-repeat bottom
+    center rgb(245, 245, 245);
   &-title {
     color: #333333;
     font-size: 36px;
     text-align: center;
+    margin: 38px 0;
   }
   &-cabinet {
     display: flex;
@@ -42,6 +45,10 @@
       box-shadow: 0px 4px 8px 0px rgba(166, 166, 166, 0.47);
       padding-bottom: 40px;
       border-radius: 10px;
+      &:hover {
+        box-shadow: 0px 8px 12px 0px rgba(98, 98, 98, 0.4);
+        transition: all 200ms ease-in;
+      }
       &-title {
         height: 78px;
         line-height: 78px;
@@ -61,12 +68,14 @@
       &-text {
         width: 280px;
         margin: 48px auto;
-        font-size: 14px;
+        font-size: 16px;
+        text-align: center;
+        min-height: 70px;
       }
       &-more {
         width: 203px;
         height: 47px;
-        background: #ff8150;
+        background: #4aa8ff;
         margin: 0 auto;
         display: block;
         line-height: 47px;
@@ -74,6 +83,9 @@
         border-radius: 4px;
         text-align: center;
         text-decoration: none;
+        &:hover {
+          background: rgb(51, 143, 229);
+        }
       }
     }
   }
@@ -82,7 +94,8 @@
   .acquisition {
     padding: 12px;
     &-title {
-      font-size: 26px;
+      font-size: 14px;
+      padding-left: 12px;
     }
     &-cabinet {
       display: block;

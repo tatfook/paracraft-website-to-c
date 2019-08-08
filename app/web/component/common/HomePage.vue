@@ -18,20 +18,20 @@
     </div>
     <div class="homepage-paracraft">
       <h3 class="homepage-paracraft-title">什么是Paracraft？</h3>
-      <p class="homepage-paracraft-text">Paracraft创意空间是一款面向7岁以上用户的免费的3D创作软件。</p>
-      <p class="homepage-paracraft-text">你可以用它创建3D场景和人物，制作动画和电影，学习和编写计算机程序。下载软件后，</p>
-      <p class="homepage-paracraft-text">可观看百部优秀的用户电影作品，创造属于你的个人作品。</p>
+      <p class="homepage-paracraft-text">Paracraft(创意空间)是一款免费开源的3D动画与编程创作软件。</p>
+      <p class="homepage-paracraft-text">你可以用它创建3D场景和人物，制作动画和电影，学习和编写计算机程序。</p>
+      <p class="homepage-paracraft-text">与成千上万的用户一起学习和分享你的个人作品。</p>
       <span class="homepage-paracraft-rectangle"></span>
     </div>
     <div class="homepage-intro">
       <div class="homepage-intro-left">
-        <p :class="['homepage-intro-left-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5">
+        <p :class="['homepage-intro-left-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index < 5" @mouseover="locateCurrentImg(index)" @mouseout="toAutoplay()">
           {{item.text}}
           <img class="homepage-intro-left-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
       </div>
       <div class="homepage-intro-center">
-        <el-carousel height="363px" @change="currentSlide">
+        <el-carousel height="363px" ref="centerCarousel" @change="currentSlide" :autoplay="isAutoplay">
           <el-carousel-item v-for="(item, index) in introCarouselData" :key="index">
             <img class="homepage-intro-center-img" :src="item.imgUrl" alt="">
           </el-carousel-item>
@@ -42,7 +42,7 @@
           {{item.text}}
           <img class="homepage-intro-right-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
-        <p :class="['homepage-intro-right-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index >= 5">
+        <p :class="['homepage-intro-right-text', {'is-active-term': currentSlideIndex == index}]" v-for="(item, index) in introCarouselData" :key="index" v-if="index >= 5" @mouseover="locateCurrentImg(index)" @mouseout="toAutoplay()">
           {{item.text}}
           <img class="homepage-intro-right-text-icon" :src="currentSlideIndex == index ? item.activeIcon : item.icon" alt="">
         </p>
@@ -79,6 +79,7 @@ export default {
   name: 'HomePage',
   data() {
     return {
+      isAutoplay: true,
       videoDialogVisible: false,
       currentSlideIndex: 0,
       introCarouselData: [
@@ -148,8 +149,17 @@ export default {
       ]
     }
   },
-  mounted() {},
+  mounted() {
+    document.title = 'Paracraft创意空间-更适合青少年的3D动画创作与编程学习工具'
+  },
   methods: {
+    locateCurrentImg(i) {
+      this.$refs.centerCarousel.setActiveItem(i)
+      this.isAutoplay = false
+    },
+    toAutoplay() {
+      this.isAutoplay = true
+    },
     currentSlide(index) {
       this.currentSlideIndex = index
     },
@@ -176,11 +186,11 @@ export default {
   &-banner {
     background: url('../../asset/images/首页海报.png') no-repeat top center
       rgb(249, 249, 249);
-    height: 643px;
+    height: 570px;
     &-buttons {
       max-width: 1200px;
       margin: 0 auto;
-      padding-top: 360px;
+      padding-top: 290px;
       &-btn {
         cursor: pointer;
       }
@@ -190,8 +200,8 @@ export default {
     }
   }
   &-phrase {
-    max-width: 1300px;
-    margin: 70px auto;
+    max-width: 1200px;
+    margin: 16px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -199,7 +209,7 @@ export default {
       width: 23%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       margin: 10px 0;
       .pre-icon {
         width: 47px;
@@ -210,13 +220,17 @@ export default {
   &-paracraft {
     text-align: center;
     padding: 30px 0 67px;
-    background: #e5b04a;
-    color: #fff;
+    background: #ffdf47;
+    box-shadow: 0px 1px 1px 0px rgba(166, 166, 166, 0.4);
+    max-width: 1920px;
+    margin: 0 auto;
+    color: #333;
     &-title {
       font-size: 36px;
     }
     &-text {
       font-size: 16px;
+      padding: 0 12px;
     }
 
     &-rectangle {
@@ -232,6 +246,8 @@ export default {
     display: flex;
     padding: 70px 0;
     justify-content: center;
+    max-width: 1920px;
+    margin: 0 auto;
     &-left {
       width: 308px;
       text-align: right;
@@ -240,8 +256,8 @@ export default {
       color: #333;
       &-text {
         position: relative;
-        margin: 0 10px;
-        padding: 20px 34px 20px 0;
+        margin: 0 20px;
+        padding: 20px 40px 20px 0;
         &-icon {
           position: absolute;
           right: 5px;
@@ -292,8 +308,8 @@ export default {
       color: #333;
       &-text {
         position: relative;
-        margin: 0 10px;
-        padding: 20px 0 20px 34px;
+        margin: 0 20px;
+        padding: 20px 0 20px 40px;
         &-icon {
           position: absolute;
           left: 5px;
@@ -343,7 +359,9 @@ export default {
     color: #333333;
     text-align: center;
     position: relative;
-    background: url('../../asset/images/图层300.png');
+    margin: 0 auto;
+    max-width: 1920px;
+    background-size: 100% 120%;
     &-title {
       font-size: 36px;
       margin: 60px 0 0;
@@ -356,12 +374,15 @@ export default {
       width: 230px;
       height: 49px;
       line-height: 49px;
-      background-color: #ff8150;
+      background-color: #4aa8ff;
       border-radius: 4px;
       display: inline-block;
       color: #fff;
       text-decoration: none;
-      margin: 0 0 190px;
+      margin: 0 0 86px;
+      &:hover {
+        background: rgb(51, 143, 229);
+      }
     }
   }
 }

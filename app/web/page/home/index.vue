@@ -62,7 +62,7 @@ body {
     width: 100%;
     z-index: 99;
     background-color: #fff;
-    box-shadow: 1px 1px 10px #f0e5e5;
+    // box-shadow: 1px 1px 10px #f0e5e5;
   }
   &-footer.el-footer {
     padding: 0;
