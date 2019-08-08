@@ -45,6 +45,10 @@
       box-shadow: 0px 4px 8px 0px rgba(166, 166, 166, 0.47);
       padding-bottom: 40px;
       border-radius: 10px;
+      &:hover {
+        box-shadow: 0px 8px 12px 0px rgba(98, 98, 98, 0.4);
+        transition: all 200ms ease-in;
+      }
       &-title {
         height: 78px;
         line-height: 78px;

@@ -42,7 +42,7 @@ export default {
         },
         {
           portrait: require('@/asset/images/parentsIcon/图层302.png'),
-          name: '老师：高老师，机构老师 ',
+          name: '高老师，机构老师 ',
           text:
             'Paracraft是3D动画与编程相结合，我们在传授孩子编程知识的同时，孩子写的代码能在动画中验证是否正确，很有吸引力。玩乐中去思考，玩乐中学习编程，很棒。'
         }

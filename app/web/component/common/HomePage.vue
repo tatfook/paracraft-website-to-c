@@ -18,9 +18,9 @@
     </div>
     <div class="homepage-paracraft">
       <h3 class="homepage-paracraft-title">什么是Paracraft？</h3>
-      <p class="homepage-paracraft-text">Paracraft创意空间是一款面向7岁以上用户的免费的3D创作软件。</p>
-      <p class="homepage-paracraft-text">你可以用它创建3D场景和人物，制作动画和电影，学习和编写计算机程序。下载软件后，</p>
-      <p class="homepage-paracraft-text">可观看百部优秀的用户电影作品，创造属于你的个人作品。</p>
+      <p class="homepage-paracraft-text">Paracraft(创意空间)是一款免费开源的3D动画与编程创作软件。</p>
+      <p class="homepage-paracraft-text">你可以用它创建3D场景和人物，制作动画和电影，学习和编写计算机程序。</p>
+      <p class="homepage-paracraft-text">与成千上万的用户一起学习和分享你的个人作品。</p>
       <span class="homepage-paracraft-rectangle"></span>
     </div>
     <div class="homepage-intro">
@@ -200,7 +200,7 @@ export default {
     }
   }
   &-phrase {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 16px auto;
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +209,7 @@ export default {
       width: 23%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       margin: 10px 0;
       .pre-icon {
         width: 47px;
@@ -230,6 +230,7 @@ export default {
     }
     &-text {
       font-size: 16px;
+      padding: 0 12px;
     }
 
     &-rectangle {

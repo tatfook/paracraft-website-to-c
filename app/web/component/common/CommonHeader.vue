@@ -2,7 +2,7 @@
   <div class="common-header">
     <el-menu :default-active="activeIndex" class="common-header-menu" mode="horizontal" @select="handleSelect">
       <el-menu-item index="top" class="common-header-menu-first"><img class="common-header-menu-logoimg" src="@/asset/images/logo.png" alt="paracraft"> <span class="common-header-menu-logo">Paracraft创意空间</span></el-menu-item>
-      <el-menu-item index="download" class="pull-right">
+      <el-menu-item index="download" class="pull-right el-menu-item-download-button">
         <el-button type="primary" :class="['common-header-menu-download-btn', {'is-active-btn': isDownloadPage}]" @click="goPage('Download')">下载</el-button>
       </el-menu-item>
       <el-menu-item index="homepage" class="pull-right">
@@ -62,6 +62,10 @@ export default {
       font-size: 24px;
       color: #333;
       border-bottom: none;
+      padding-left: 0;
+      &-download-button {
+        padding-right: 0;
+      }
       a {
         text-decoration: none;
       }

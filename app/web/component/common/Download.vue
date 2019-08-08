@@ -5,8 +5,7 @@
         <p class="download-welcome-center-title">欢迎下载Paracraft</p>
         <p class="download-welcome-center-version"><span class="download-welcome-center-version-new">最新版本：0.7.457</span> <a href="https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019" class="download-welcome-center-version-update">更新日志</a></p>
         <p class="download-welcome-center-count">
-          <span class="download-welcome-center-count-diamonds" v-for="(i,index) in optimizeDownloadCount" :key="index">{{i}}</span>
-          下载使用
+          <span class="download-welcome-center-count-diamonds" v-for="(i,index) in optimizeDownloadCount" :key="index">{{i}}</span>人下载使用
         </p>
       </div>
     </div>
@@ -38,7 +37,8 @@
               <img class="download-center-cabinet-box-QR" src="@/asset/images/下载页/下载安装/qrct-049b1319e0b9933ca83e6cd2e27524b4.png" alt="">
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
-            <a href="https://appstore.huawei.com/app/C100506871" class="download-center-cabinet-box-hint-phone">点击下载手机APK安装包从华为应用商店下载</a>
+            <a href="http://cdn.keepwork.com/paracraft/android/paracraft.apk?ver=07411" class="download-center-cabinet-box-hint-phone">点击下载手机APK安装包</a>
+            <a href="https://appstore.huawei.com/app/C100506871" class="download-center-cabinet-box-hint-phone">从华为应用商店下载</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
@@ -102,6 +102,7 @@ export default {
   },
   computed: {
     optimizeDownloadCount() {
+      this.downloadCount = 103200 + this.downloadCount
       return this.downloadCount.toString().split('')
     }
   },

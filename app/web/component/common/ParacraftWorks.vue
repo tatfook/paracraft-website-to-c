@@ -149,14 +149,14 @@ export default {
     align-items: center;
     cursor: pointer;
     &-dot {
-      width: 32px;
-      height: 3px;
+      width: 30px;
+      height: 2px;
       display: inline-block;
-      background: #e3e6eb;
+      background: #b8c0cc;;
       border-radius: 1px;
-      margin: 0 7px;
+      margin: 0 4px;
       &-active {
-        background: #6ab7f9;
+        background: #409eff;
       }
     }
     &-btn {
@@ -169,6 +169,7 @@ export default {
       position: relative;
       border: 1px solid #b8c0cc;
       cursor: pointer;
+      margin: 0 58px;
       &:hover {
         background-color: #4aa8ff;
         border: 1px solid #4aa8ff;

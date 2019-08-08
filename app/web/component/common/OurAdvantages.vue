@@ -196,6 +196,18 @@ export default {
             }
           }
         }
+        .el-carousel__indicators {
+          .el-carousel__indicator {
+            .el-carousel__button {
+              background: #b8c0cc;
+            }
+            &.is-active {
+              .el-carousel__button {
+                background: #409eff;
+              }
+            }
+          }
+        }
       }
     }
     &-text {
