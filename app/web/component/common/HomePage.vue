@@ -184,8 +184,7 @@ export default {
 <style lang="scss" scoped>
 .homepage {
   &-banner {
-    background: url('../../asset/images/首页海报.png') no-repeat top center
-      rgb(249, 249, 249);
+    background: url('../../asset/images/首页海报.png') no-repeat top center;
     height: 570px;
     &-buttons {
       max-width: 1200px;

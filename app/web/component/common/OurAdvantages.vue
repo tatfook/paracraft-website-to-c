@@ -126,7 +126,7 @@ export default {
           activeIcon: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/当前播放.png')
         },
         {
-          imgUrl: require('@/asset/images/ourAdvantagesImg/不只是教学工具/强大的功能足以胜任商业开发.png'),
+          imgUrl: require('@/asset/images/ourAdvantagesImg/不只是教学工具/强大的功能足以胜任商业开发.jpg'),
           text: '强大的功能足以胜任商业开发',
           icon: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/待播放.png'),
           activeIcon: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/当前播放.png')
