@@ -8,7 +8,7 @@
         <h4 class="common-footer-center-part-2-title">{{i.title}}</h4>
         <ul class="common-footer-center-part-2-list">
           <li class="common-footer-center-part-2-item" v-for="(j, num) in i.secondaryList" :key="num">
-            <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && num == 0 ? '' : '_blank'">{{j.title}}</a>
+            <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && (num == 0 || num == 1) ? '' : '_blank'">{{j.title}}</a>
           </li>
         </ul>
       </div>
@@ -27,7 +27,7 @@
         <el-collapse-item :title="i.title" :name="index" v-for="(i,index) in listData" :key="index">
           <ul class="common-footer-center-part-2-list">
             <li class="common-footer-center-part-2-item" v-for="(j, num) in i.secondaryList" :key="num">
-              <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && num == 0 ? '' : '_blank'">{{j.title}}</a>
+              <a class="common-footer-center-part-2-item-link" :href="j.linkUrl" :target="index == 0 && (num == 0 || num == 1) ? '' : '_blank'">{{j.title}}</a>
             </li>
           </ul>
         </el-collapse-item>
@@ -69,11 +69,11 @@ export default {
           secondaryList: [
             {
               title: 'Paracraft首页',
-              linkUrl: ''
+              linkUrl: `${window.location.origin}/`
             },
             {
               title: '下载Paracraft',
-              linkUrl: ''
+              linkUrl: `${window.location.origin}/download`
             },
             {
               title: '作品社区',
@@ -94,7 +94,8 @@ export default {
             },
             {
               title: '更新日志',
-              linkUrl: 'https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019'
+              linkUrl:
+                'https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019'
             }
           ]
         },
@@ -218,13 +219,27 @@ export default {
     &-phone {
       display: block;
       /deep/ .el-collapse {
+        border-top: 1px solid #5d98e9;
         .el-collapse-item {
           .el-collapse-item__header {
             background: none;
             color: #fff;
+            border-bottom: 1px solid #5d98e9;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            .el-collapse-item__arrow {
+              color: #5d98e9;
+            }
           }
           .el-collapse-item__wrap {
             background: transparent;
+            border-bottom: 1px solid #5d98e9;
+            .el-collapse-item__content {
+              a {
+                font-size: 12px;
+              }
+            }
           }
         }
       }

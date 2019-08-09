@@ -4,17 +4,23 @@
     <div class="acquisition-cabinet">
       <div class="acquisition-cabinet-box">
         <h4 class="acquisition-cabinet-box-title title-1">PBL项目式学习</h4>
-        <p class="acquisition-cabinet-box-text">通过丰富的项目，让孩子们从多角度学习计算思维，结合项目实例，扎实掌握知识。</p>
+        <div class="acquisition-cabinet-box-phone-text">
+          <p class="acquisition-cabinet-box-text">通过丰富的项目，让孩子们从多角度学习计算思维，结合项目实例，扎实掌握知识。</p>
+        </div>
         <a href="https://keepwork.com" target="_blank" class="acquisition-cabinet-box-more">进一步了解</a>
       </div>
       <div class="acquisition-cabinet-box">
         <h4 class="acquisition-cabinet-box-title title-2">《Paracraft编程入门》</h4>
-        <p class="acquisition-cabinet-box-text">学生、家长、老师的AI与编程入门教材，适合7岁以上用户使用</p>
+        <div class="acquisition-cabinet-box-phone-text">
+          <p class="acquisition-cabinet-box-text">学生、家长、老师的AI与编程入门教材，适合7岁以上用户使用</p>
+        </div>
         <a href="https://keepwork.com/s/textbook" target="_blank" class="acquisition-cabinet-box-more">进一步了解</a>
       </div>
       <div class="acquisition-cabinet-box">
         <h4 class="acquisition-cabinet-box-title title-3">编程教学</h4>
-        <p class="acquisition-cabinet-box-text">了解Paracraft如何在课堂中轻松进行编程教学</p>
+        <div class="acquisition-cabinet-box-phone-text">
+          <p class="acquisition-cabinet-box-text">了解Paracraft如何在课堂中轻松进行编程教学</p>
+        </div>
         <a href="https://keepwork.com/s/lesson" target="_blank" class="acquisition-cabinet-box-more">进一步了解</a>
       </div>
     </div>
@@ -93,27 +99,39 @@
 @media screen and (max-width: 769px) {
   .acquisition {
     padding: 12px;
+    background: rgb(245, 250, 255);
     &-title {
       font-size: 14px;
       padding-left: 12px;
+      margin: 25px 0 20px;
     }
     &-cabinet {
       display: block;
       &-box {
+        margin: 0;
+        width: 100%;
         &-title {
           height: 57px;
           line-height: 57px;
           font-size: 14px;
         }
+        &-phone-text{
+          height: 100px;
+          display: flex;
+          align-items: center;
+        }
         &-text {
           margin: 14px;
+          margin: 0 auto;
+          font-size: 12px;
+          min-height: auto;
         }
         &-more {
           height: 32px;
           line-height: 32px;
           width: 140px;
+          font-size: 12px;
         }
-        width: 80%;
         max-width: 366px;
         margin: 20px auto;
         border-radius: 12px;

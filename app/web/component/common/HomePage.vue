@@ -4,6 +4,8 @@
       <div class="homepage-banner-buttons">
         <span class="homepage-banner-buttons-btn" @click="goDownload()"><img src="@/asset/images/下载.png" alt=""></span>
         <span class="homepage-banner-buttons-btn" @click="showVideo('https://qiniu.keepwork.com/f6bab200-bd94-11e8-9154-47b62c80c5e7.mp4?e=1564817063&token=LYZsjH0681n9sWZqCM4E2KmU6DsJOE7CAM4O3eJq:OKNxfvL4zhUTPlY6wZs4BZo7v3Y=#%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%9101.mp4')"><img src="@/asset/images/观看视频.png" alt=""></span>
+        <span class="homepage-banner-buttons-btn-phone" @click="goDownload()"><img src="@/asset/images/parentsIcon/矩形6拷贝.png" alt=""></span>
+        <span class="homepage-banner-buttons-btn-phone" @click="showVideo('https://qiniu.keepwork.com/f6bab200-bd94-11e8-9154-47b62c80c5e7.mp4?e=1564817063&token=LYZsjH0681n9sWZqCM4E2KmU6DsJOE7CAM4O3eJq:OKNxfvL4zhUTPlY6wZs4BZo7v3Y=#%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%9101.mp4')"><img src="@/asset/images/parentsIcon/观看视频-1.png" alt=""></span>
       </div>
     </div>
     <div class="homepage-phrase">
@@ -184,8 +186,7 @@ export default {
 <style lang="scss" scoped>
 .homepage {
   &-banner {
-    background: url('../../asset/images/首页海报.png') no-repeat top center
-      rgb(249, 249, 249);
+    background: url('../../asset/images/首页海报.png') no-repeat top center;
     height: 570px;
     &-buttons {
       max-width: 1200px;
@@ -193,6 +194,9 @@ export default {
       padding-top: 290px;
       &-btn {
         cursor: pointer;
+        &-phone {
+          display: none;
+        }
       }
       &-btn + &-btn {
         margin-left: 35px;
@@ -213,7 +217,7 @@ export default {
       margin: 10px 0;
       .pre-icon {
         width: 47px;
-        margin-right: 12px;
+        margin-right: 10px;
       }
     }
   }
@@ -371,8 +375,8 @@ export default {
       margin: 12px 0 45px;
     }
     &-button {
-      width: 230px;
-      height: 49px;
+      width: 203px;
+      height: 47px;
       line-height: 49px;
       background-color: #4aa8ff;
       border-radius: 4px;
@@ -390,18 +394,17 @@ export default {
   .homepage {
     &-banner {
       background: url('../../asset/images/paracraft-phone-bg.png') no-repeat top
-        center;
+        center rgb(245, 245, 245);
       height: auto;
       &-buttons {
         padding-top: 160px;
         display: flex;
         justify-content: center;
         &-btn {
-          width: 30%;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+          display: none;
+          &-phone {
+            display: inline;
+            margin: 0 12px 15px 12px;
           }
         }
       }
@@ -421,13 +424,12 @@ export default {
       }
     }
     &-phrase {
-      // display: block;
       flex-wrap: wrap;
       &-term {
-        width: 47%;
+        width: 40%;
         justify-content: start;
         font-size: 12px;
-        padding-left: 5px;
+        padding-left: 15px;
       }
     }
     &-intro {
@@ -454,14 +456,21 @@ export default {
         }
       }
       &-right {
+        width: 100%;
+        margin: 10px;
         &-text {
-          padding: 10px 0 10px 34px;
+          padding: 10px 20px 10px 44px;
           font-size: 12px;
+          width: 100%;
+          box-sizing: border-box;
+          margin: 0;
           &-phone {
             display: block;
+            // padding-left: 50px;
           }
           &-icon {
             top: 8px;
+            left: 14px;
           }
         }
         .is-active-term {
@@ -471,11 +480,13 @@ export default {
       }
     }
     &-paracraft {
+      padding: 10px 0 16px;
       &-title {
         font-size: 14px;
       }
       &-text {
         font-size: 12px;
+        margin: 5px;
       }
     }
     &-download {
@@ -487,7 +498,7 @@ export default {
         font-size: 12px;
       }
       &-button {
-        width: 130px;
+        width: 140px;
         height: 32px;
         line-height: 32px;
         margin: 0 0 22px;

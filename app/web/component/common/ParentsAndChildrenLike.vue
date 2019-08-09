@@ -4,7 +4,7 @@
       孩子、父母和老师都喜欢Paracraft
     </h3>
     <div class="parents-and-children-like-carousel">
-      <el-carousel indicator-position="outside" arrow="always">
+      <el-carousel indicator-position="outside" arrow="always" interval="6000" :autoplay="false">
         <el-carousel-item v-for="(item,index) in statementData" :key="index">
           <div class="carousel-box">
             <div class="carousel-box-left">
@@ -129,15 +129,16 @@ export default {
 }
 @media screen and (max-width: 769px) {
   .parents-and-children-like {
+    padding: 25px 0 0;
     &-title {
       font-size: 14px;
-      text-align: left;
       padding-left: 12px;
+      margin-bottom: 20px;
     }
     &-carousel {
       /deep/ .el-carousel {
         .el-carousel__container {
-          height: 300px !important;
+          height: 180px !important;
           .el-carousel__item {
             display: flex;
             justify-content: center;
@@ -147,12 +148,25 @@ export default {
                 width: 100%;
                 text-align: center;
                 padding: 0;
+                &-img {
+                  width: 58px;
+                  height: 58px;
+                }
               }
               &-right {
                 padding: 0 50px;
                 width: 100%;
                 box-sizing: border-box;
                 font-size: 12px;
+                &-desc {
+                  &-text {
+                    text-align: center;
+                  }
+                  &-words {
+                    font-size: 12px;
+                    line-height: 20px;
+                  }
+                }
               }
             }
           }

@@ -101,12 +101,12 @@ export default {
       }
       &-download-btn,
       &-homepage-btn {
-        padding: 6px 4px;
+        padding: 6px 10px;
       }
     }
     .el-menu--horizontal.el-menu {
       .el-menu-item {
-        padding: 0 14px;
+        padding: 0 10px;
       }
     }
   }

@@ -152,7 +152,7 @@ export default {
       width: 30px;
       height: 2px;
       display: inline-block;
-      background: #b8c0cc;;
+      background: #b8c0cc;
       border-radius: 1px;
       margin: 0 4px;
       &-active {
@@ -208,13 +208,13 @@ export default {
 }
 @media screen and (max-width: 769px) {
   .works {
+    padding-bottom: 20px;
     &-title {
       font-size: 14px;
-      padding: 12px 0 0 12px;
-      text-align: left;
+      padding: 25px 0 10px 12px;
     }
     &-cabinet {
-      padding: 8px;
+      padding: 10px;
       min-height: 480px;
       &-box {
         width: 48%;
@@ -243,6 +243,11 @@ export default {
           font-size: 12px;
           padding: 0 0 5px 4px;
         }
+      }
+    }
+    &-paging {
+      &-btn {
+        margin: 0 18px;
       }
     }
   }

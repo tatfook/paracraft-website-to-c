@@ -126,7 +126,7 @@ export default {
           activeIcon: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/当前播放.png')
         },
         {
-          imgUrl: require('@/asset/images/ourAdvantagesImg/不只是教学工具/强大的功能足以胜任商业开发.png'),
+          imgUrl: require('@/asset/images/ourAdvantagesImg/不只是教学工具/强大的功能足以胜任商业开发.jpg'),
           text: '强大的功能足以胜任商业开发',
           icon: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/待播放.png'),
           activeIcon: require('@/asset/images/ourAdvantagesImg/1-比Minecraft更进一步/当前播放.png')
@@ -257,13 +257,17 @@ export default {
     padding: 10px 0;
     &-title {
       font-size: 14px;
-      margin-bottom: 10px;
-      text-align: left;
+      margin: 15px 0 20px;
       padding-left: 10px;
     }
     &-box {
       flex-wrap: wrap;
       margin-bottom: 12px;
+      border: none;
+      padding-top: 0;
+      & + .our-advantages-box {
+        border: none;
+      }
       &-carousel {
         width: calc(100vw);
         /deep/ .el-carousel {
@@ -277,14 +281,20 @@ export default {
         text-align: left;
         &-title {
           font-size: 14px;
+          padding-left: 12px;
+          font-weight: normal;
+          // margin: 0 0 0 7px 0;
+          margin: 0 0 8px 0;
         }
         &-ad {
           font-size: 12px;
+          padding-left: 12px;
         }
         &-desc {
           text-align: left;
           font-size: 12px;
-          padding: 3px;
+          padding: 5px 10px 5px 20px;
+          margin: 0;
           &-icon {
             transform: rotate(90deg);
           }
