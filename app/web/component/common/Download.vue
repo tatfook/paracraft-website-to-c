@@ -17,14 +17,14 @@
             <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
             <p class="download-center-cabinet-box-recommend">Windows版（推荐）</p>
             <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.exe?ver=07457" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight "><img class="download-center-cabinet-box-desc-img" src="@/asset/images/下载页/下载安装/Windows-8拷贝.png" alt="">下载</a>
-            <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.zip?ver=07470" class="download-center-cabinet-box-desc">U盘免安装版</a>
+            <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.zip?ver=07470" @click="addDownloadCount" class="download-center-cabinet-box-desc">U盘免安装版</a>
             <p class="download-center-cabinet-box-hint">如无法安装，可能你使用了特殊的下载工具，可尝试U盘免安装版</p>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
-            <a href="https://itunes.apple.com/cn/app/paracraft/id1422406070" target="_blank" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+            <a href="https://itunes.apple.com/cn/app/paracraft/id1422406070" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
             <p class="download-center-cabinet-box-hint">0.7.430</p>
           </div>
         </div>
@@ -37,8 +37,8 @@
               <img class="download-center-cabinet-box-QR" src="@/asset/images/下载页/下载安装/qrct-049b1319e0b9933ca83e6cd2e27524b4.png" alt="">
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
-            <a href="http://cdn.keepwork.com/paracraft/android/paracraft.apk?ver=07411" class="download-center-cabinet-box-hint-phone">点击下载手机APK安装包</a>
-            <a href="https://appstore.huawei.com/app/C100506871" class="download-center-cabinet-box-hint-phone">从华为应用商店下载</a>
+            <a href="http://cdn.keepwork.com/paracraft/android/paracraft.apk?ver=07411" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
+            <a href="https://appstore.huawei.com/app/C100506871" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从华为应用商店下载</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
@@ -107,6 +107,7 @@ export default {
     }
   },
   mounted() {
+    window.scrollTo(0, 0)
     document.title = '下载-Paracraft创意空间'
     let baseUrl = process.env.KEEPWORK_API_PREFIX
     axios
@@ -134,7 +135,7 @@ export default {
 .download {
   &-welcome {
     background: #1e7cfc;
-    padding: 30px 0 38px;
+    padding: 30px 30px 38px;
     &-center {
       max-width: 1200px;
       margin: 0 auto;
@@ -337,14 +338,16 @@ export default {
       }
       &-cabinet {
         flex-wrap: wrap;
-        // padding-top: 12px;
         padding: 0;
         &-box {
-          min-width: 200px;
+          min-width: 220px;
           border-bottom: 10px solid rgb(249, 249, 249);
           padding: 26px 0;
           &-hint {
             font-size: 12px;
+            &-phone {
+              max-width: 220px;
+            }
           }
         }
       }
