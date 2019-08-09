@@ -36,7 +36,7 @@ export default {
   components: {
     CommonHeader,
     CommonFooter
-  },
+  }
 }
 </script>
 <style lang="scss">
@@ -44,6 +44,8 @@ body {
   display: flex;
   min-height: 100vh;
   margin: 0;
+  min-width: 1280px;
+  overflow-x: scroll;
 }
 .index-page-container {
   min-height: 100%;
@@ -68,6 +70,13 @@ body {
     padding: 0;
     height: auto !important;
     background-color: #282828;
+  }
+}
+@media screen and (max-width: 769px) {
+  body {
+    max-width: 100px;
+    min-width: 100%;
+    overflow: auto;
   }
 }
 </style>

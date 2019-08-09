@@ -107,6 +107,7 @@ export default {
     }
   },
   mounted() {
+    window.scrollTo(0, 0)
     document.title = '下载-Paracraft创意空间'
     let baseUrl = process.env.KEEPWORK_API_PREFIX
     axios
@@ -134,7 +135,7 @@ export default {
 .download {
   &-welcome {
     background: #1e7cfc;
-    padding: 30px 0 38px;
+    padding: 30px 30px 38px;
     &-center {
       max-width: 1200px;
       margin: 0 auto;
@@ -337,14 +338,16 @@ export default {
       }
       &-cabinet {
         flex-wrap: wrap;
-        // padding-top: 12px;
         padding: 0;
         &-box {
-          min-width: 200px;
+          min-width: 220px;
           border-bottom: 10px solid rgb(249, 249, 249);
           padding: 26px 0;
           &-hint {
             font-size: 12px;
+            &-phone {
+              max-width: 220px;
+            }
           }
         }
       }

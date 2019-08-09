@@ -152,6 +152,7 @@ export default {
     }
   },
   mounted() {
+    window.scrollTo(0, 0)
     document.title = 'Paracraft创意空间-更适合青少年的3D动画创作与编程学习工具'
   },
   methods: {
