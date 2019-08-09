@@ -487,7 +487,7 @@ export default {
       &-text {
         font-size: 12px;
         margin: 5px;
-      }       
+      }
     }
     &-download {
       &-title {
