@@ -4,7 +4,7 @@
       孩子、父母和老师都喜欢Paracraft
     </h3>
     <div class="parents-and-children-like-carousel">
-      <el-carousel indicator-position="outside" arrow="always">
+      <el-carousel indicator-position="outside" arrow="always" interval="6000">
         <el-carousel-item v-for="(item,index) in statementData" :key="index">
           <div class="carousel-box">
             <div class="carousel-box-left">

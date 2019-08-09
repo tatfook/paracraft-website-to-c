@@ -277,6 +277,7 @@ export default {
         text-align: left;
         &-title {
           font-size: 14px;
+          padding-left: 12px;    
         }
         &-ad {
           font-size: 12px;
@@ -284,7 +285,7 @@ export default {
         &-desc {
           text-align: left;
           font-size: 12px;
-          padding: 3px;
+          padding: 5px 10px 5px 28px;
           &-icon {
             transform: rotate(90deg);
           }

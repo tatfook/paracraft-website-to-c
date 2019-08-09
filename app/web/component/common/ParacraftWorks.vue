@@ -152,7 +152,7 @@ export default {
       width: 30px;
       height: 2px;
       display: inline-block;
-      background: #b8c0cc;;
+      background: #b8c0cc;
       border-radius: 1px;
       margin: 0 4px;
       &-active {
@@ -243,6 +243,11 @@ export default {
           font-size: 12px;
           padding: 0 0 5px 4px;
         }
+      }
+    }
+    &-paging {
+      &-btn {
+        margin: 0 18px;
       }
     }
   }

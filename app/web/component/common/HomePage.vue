@@ -454,6 +454,7 @@ export default {
         }
       }
       &-right {
+        padding: 14px;
         &-text {
           padding: 10px 0 10px 34px;
           font-size: 12px;
