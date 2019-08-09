@@ -375,8 +375,8 @@ export default {
       margin: 12px 0 45px;
     }
     &-button {
-      width: 230px;
-      height: 49px;
+      width: 203px;
+      height: 47px;
       line-height: 49px;
       background-color: #4aa8ff;
       border-radius: 4px;
@@ -487,7 +487,7 @@ export default {
       &-text {
         font-size: 12px;
         margin: 5px;
-      }
+      }       
     }
     &-download {
       &-title {
@@ -498,7 +498,7 @@ export default {
         font-size: 12px;
       }
       &-button {
-        width: 130px;
+        width: 140px;
         height: 32px;
         line-height: 32px;
         margin: 0 0 22px;

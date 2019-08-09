@@ -208,13 +208,13 @@ export default {
 }
 @media screen and (max-width: 769px) {
   .works {
+    padding-bottom: 20px;
     &-title {
       font-size: 14px;
-      padding: 12px 0 0 12px;
-      text-align: left;
+      padding: 25px 0 10px 12px;
     }
     &-cabinet {
-      padding: 8px;
+      padding: 10px;
       min-height: 480px;
       &-box {
         width: 48%;

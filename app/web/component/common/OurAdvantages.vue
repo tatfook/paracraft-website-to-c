@@ -257,12 +257,17 @@ export default {
     padding: 10px 0;
     &-title {
       font-size: 14px;
-      margin-bottom: 0;
+      margin: 15px 0 20px;
       padding-left: 10px;
     }
     &-box {
       flex-wrap: wrap;
       margin-bottom: 12px;
+      border: none;
+      padding-top: 0;
+      & + .our-advantages-box {
+        border: none;
+      }
       &-carousel {
         width: calc(100vw);
         /deep/ .el-carousel {
@@ -276,15 +281,20 @@ export default {
         text-align: left;
         &-title {
           font-size: 14px;
-          padding-left: 12px;    
+          padding-left: 12px;
+          font-weight: normal;
+          // margin: 0 0 0 7px 0;
+          margin: 0 0 8px 0;
         }
         &-ad {
           font-size: 12px;
+          padding-left: 12px;
         }
         &-desc {
           text-align: left;
           font-size: 12px;
-          padding: 5px 10px 5px 28px;
+          padding: 5px 10px 5px 20px;
+          margin: 0;
           &-icon {
             transform: rotate(90deg);
           }

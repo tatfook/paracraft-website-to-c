@@ -219,13 +219,27 @@ export default {
     &-phone {
       display: block;
       /deep/ .el-collapse {
+        border-top: 1px solid #5d98e9;
         .el-collapse-item {
           .el-collapse-item__header {
             background: none;
             color: #fff;
+            border-bottom: 1px solid #5d98e9;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            .el-collapse-item__arrow {
+              color: #5d98e9;
+            }
           }
           .el-collapse-item__wrap {
             background: transparent;
+            border-bottom: 1px solid #5d98e9;
+            .el-collapse-item__content {
+              a {
+                font-size: 12px;
+              }
+            }
           }
         }
       }

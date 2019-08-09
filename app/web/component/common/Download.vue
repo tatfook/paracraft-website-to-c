@@ -314,8 +314,9 @@ export default {
       &-center {
         padding-left: 12px;
         &-title {
-          font-size: 14px;
+          font-size: 16px;
           padding: 12px 0 0 0;
+          font-weight: bold;
         }
         &-version {
           font-size: 12px;
@@ -329,11 +330,15 @@ export default {
     }
     &-center {
       &-guide {
-        font-size: 14px;
+        font-size: 12px;
+        margin: 0;
+        min-height: 40px;
+        line-height: 40px;
       }
       &-cabinet {
         flex-wrap: wrap;
-        padding-top: 12px;
+        // padding-top: 12px;
+        padding: 0;
         &-box {
           min-width: 200px;
           border-bottom: 10px solid rgb(249, 249, 249);
