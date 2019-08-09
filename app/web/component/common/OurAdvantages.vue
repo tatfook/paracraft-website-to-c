@@ -257,8 +257,7 @@ export default {
     padding: 10px 0;
     &-title {
       font-size: 14px;
-      margin-bottom: 10px;
-      text-align: left;
+      margin-bottom: 0;
       padding-left: 10px;
     }
     &-box {
