@@ -57,7 +57,7 @@ export default {
   margin: 0 auto;
   .en-change-icon {
     font-size: 34px;
-    margin-left: 20px;
+    margin-left: 10px;
     transition: all .2s ease-in-out;
     &:hover {
       color: #4AA8FF;
