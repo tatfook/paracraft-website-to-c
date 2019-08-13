@@ -25,12 +25,22 @@ Vue.use(ElementUI)
 export default {
   name: 'App',
   router,
-  mounted() {
-    // console.log('this.route', this.$route)
-  },
   computed: {
     hiddenHeaderAndFooter() {
       return this.$route.name === 'EmailContent' ? false : true
+    }
+  },
+  mounted() {
+    const language = navigator.appName === 'Netscape' ? navigator.language : navigator.browserLanguage
+    if (language.indexOf('zh') === -1) {
+      this.$confirm('Do you switch to English ?', '', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel'
+      }).then(res => {
+        window.location.href = 'http://paracraft.org/'
+      }).catch(e => {
+        console.error(e)
+      })
     }
   },
   components: {
@@ -52,7 +62,6 @@ body {
   &-main {
     padding: 0;
     padding-top: 82px;
-    // overflow: hidden;
   }
   &-header.el-header {
     padding: 0;
@@ -64,7 +73,6 @@ body {
     width: 100%;
     z-index: 99;
     background-color: #fff;
-    // box-shadow: 1px 1px 10px #f0e5e5;
   }
   &-footer.el-footer {
     padding: 0;
