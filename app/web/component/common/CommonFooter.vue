@@ -45,19 +45,14 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+import { getVisitCount } from '@/api'
+import aixos from 'axios'
 
 export default {
   name: 'CommonFooter',
-  mounted() {
-    axios
-      .post('https://api-stage.keepwork.com/core/v0/keepworks/page_visit', {
-        url: window.location.href
-      })
-      .then(response => {
-        this.visitCount = response.data
-      })
-      .catch(error => console.log(error))
+  async mounted() {
+    const count = await getVisitCount()
+    this.visitCount = count
   },
   data() {
     return {
