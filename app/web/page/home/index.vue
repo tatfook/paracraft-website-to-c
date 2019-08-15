@@ -31,7 +31,6 @@ export default {
     }
   },
   mounted() {
-    console.log(process.env)
     const language = navigator.appName === 'Netscape' ? navigator.language : navigator.browserLanguage
     if (language.indexOf('zh') === -1) {
       this.$confirm('Do you switch to English ?', '', {

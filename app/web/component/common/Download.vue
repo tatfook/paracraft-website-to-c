@@ -3,7 +3,7 @@
     <div class="download-welcome">
       <div class="download-welcome-center">
         <p class="download-welcome-center-title">欢迎下载Paracraft</p>
-        <p class="download-welcome-center-version"><span class="download-welcome-center-version-new">最新版本：0.7.457</span> <a href="https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019" class="download-welcome-center-version-update">更新日志</a></p>
+        <p class="download-welcome-center-version"><span class="download-welcome-center-version-new">最新版本：{{downloadURL.version}}</span> <a href="https://www.evernote.com/shard/s177/client/snv?noteGuid=f876e8cb-4563-4b26-ba23-55524609b79d&noteKey=89b1fed1ca2e1eb1&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs177%2Fsh%2Ff876e8cb-4563-4b26-ba23-55524609b79d%2F89b1fed1ca2e1eb1&title=%2523%2523%2BParaCraft%2BChange%2BLog%2B2019" class="download-welcome-center-version-update">更新日志</a></p>
         <p class="download-welcome-center-count">
           <span class="download-welcome-center-count-diamonds" v-for="(i,index) in optimizeDownloadCount" :key="index">{{i}}</span>人下载使用
         </p>
@@ -16,15 +16,15 @@
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
             <p class="download-center-cabinet-box-recommend">Windows版（推荐）</p>
-            <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.exe?ver=07457" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight "><img class="download-center-cabinet-box-desc-img" src="@/asset/images/下载页/下载安装/Windows-8拷贝.png" alt="">下载</a>
-            <a href="http://cdn.keepwork.com/paracraft/win32/paracraft_full.zip?ver=07470" @click="addDownloadCount" class="download-center-cabinet-box-desc">U盘免安装版</a>
+            <a :href="downloadURL.window_install" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight "><img class="download-center-cabinet-box-desc-img" src="@/asset/images/下载页/下载安装/Windows-8拷贝.png" alt="">下载</a>
+            <a :href="downloadURL.window_zip" @click="addDownloadCount" class="download-center-cabinet-box-desc">U盘免安装版</a>
             <p class="download-center-cabinet-box-hint">如无法安装，可能你使用了特殊的下载工具，可尝试U盘免安装版</p>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
-            <a href="https://itunes.apple.com/cn/app/paracraft/id1422406070" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+            <a :href="downloadURL.mac" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
             <p class="download-center-cabinet-box-hint">0.7.430</p>
           </div>
         </div>
@@ -34,11 +34,11 @@
           <div class="download-center-cabinet-box">
             <div class="download-center-cabinet-box-cover">
               <img src="@/asset/images/下载页/下载安装/phone_android.png" alt="">
-              <img class="download-center-cabinet-box-QR" src="@/asset/images/下载页/下载安装/qrct-049b1319e0b9933ca83e6cd2e27524b4.png" alt="">
+              <qrcode :value="downloadURL.android_huawei" :options="QROptions" class="download-center-cabinet-box-QR"></qrcode>
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
-            <a href="http://cdn.keepwork.com/paracraft/android/paracraft.apk?ver=07411" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
-            <a href="https://appstore.huawei.com/app/C100506871" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从华为应用商店下载</a>
+            <a :href="downloadURL.android_apk" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
+            <a :href="downloadURL.android_huawei" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从华为应用商店下载</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
@@ -92,40 +92,50 @@
 </template>
 <script>
 import axios from 'axios'
-
+import { get, post } from '@/api'
 export default {
   name: 'Download',
   data() {
     return {
-      downloadCount: ''
+      downloadCount: '',
+      downloadURL: {}
     }
   },
   computed: {
     optimizeDownloadCount() {
       this.downloadCount = 103200 + this.downloadCount
       return this.downloadCount.toString().split('')
+    },
+    baseUrl() {
+      return process.env.KEEPWORK_API_PREFIX
+    },
+    QROptions() {
+      return {
+        width: 91,
+        height: 91
+      }
     }
   },
-  mounted() {
+  async mounted() {
     window.scrollTo(0, 0)
     document.title = '下载-Paracraft创意空间'
-    let baseUrl = process.env.KEEPWORK_API_PREFIX
-    axios
-      .get(`${baseUrl}/keepworks/paracraft_download_count`)
-      .then(response => {
-        this.downloadCount = response.data
-      })
-      .catch(error => console.error(error))
+    await Promise.all([this.getDownloadCount(), this.getdownloadURL()])
   },
   methods: {
+    async getDownloadCount() {
+      const res = await get('keepworks/paracraft_download_count')
+      this.downloadCount = res
+    },
     addDownloadCount() {
-      let baseUrl = process.env.KEEPWORK_API_PREFIX
-      axios
-        .post(`${baseUrl}/keepworks/paracraft_download_count`, {})
+      post('keepworks/paracraft_download_count', {})
         .then(response => {
-          this.downloadCount = response.data
+          this.downloadCount = response
         })
         .catch(error => console.error(error))
+    },
+    async getdownloadURL() {
+      const url = await get('keepworks/paracraft_download_url')
+      this.downloadURL = url
     }
   }
 }
