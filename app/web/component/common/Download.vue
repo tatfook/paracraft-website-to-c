@@ -73,7 +73,9 @@
             <h4 class="download-abstract-intro-box-content-title">Paracraft创意空间</h4>
             <p class="download-abstract-intro-box-content-text">3D个人电影创作软件</p>
             <p class="download-abstract-intro-box-content-text">开源</p>
-            <p class="download-abstract-intro-box-content-text">Paracraft SDK，源代码，材质包，插件请看这里</p>
+            <p class="download-abstract-intro-box-content-text">Paracraft SDK，源代码，材质包，插件请看
+              <a class="download-center-paracraft-hint-guide" target="_blank" href="https://keepwork.com/official/docs/Resource/intro">这里</a>
+            </p>
           </div>
         </div>
       </div>
