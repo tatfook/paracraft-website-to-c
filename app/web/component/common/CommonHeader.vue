@@ -1,7 +1,7 @@
 <template>
   <div class="common-header">
     <el-menu :default-active="activeIndex" class="common-header-menu" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="top" class="common-header-menu-first"><img class="common-header-menu-logoimg" src="@/asset/images/logo.png" alt="paracraft"> <span class="common-header-menu-logo">Paracraft创意空间</span></el-menu-item>
+      <el-menu-item index="top" class="common-header-menu-first"><img class="common-header-menu-logoimg" src="@/asset/images/logo.png" alt="paracraft"> <span class="common-header-menu-logo">Paracraft创意空间</span> <i @click="onChangeLanguge" class="icon-english1 iconfont en-change-icon"></i></el-menu-item>
       <el-menu-item index="download" class="pull-right el-menu-item-download-button">
         <el-button type="primary" :class="['common-header-menu-download-btn', {'is-active-btn': isDownloadPage}]" @click="goPage('Download')">下载</el-button>
       </el-menu-item>
@@ -21,7 +21,6 @@ export default {
       activeIndex: 'top'
     }
   },
-  watch: {},
   computed: {
     isHomepage() {
       return this.$route.name == 'HomePage' ? true : false
@@ -45,6 +44,9 @@ export default {
       this.$router.push({
         name
       })
+    },
+    onChangeLanguge() {
+      window.location.href = 'http://paracraft.org/'
     }
   }
 }
@@ -53,6 +55,14 @@ export default {
 .common-header {
   max-width: 1200px;
   margin: 0 auto;
+  .en-change-icon {
+    font-size: 34px;
+    margin-left: 10px;
+    transition: all .2s ease-in-out;
+    &:hover {
+      color: #4AA8FF;
+    }
+  }
   .el-menu--horizontal.el-menu {
     min-height: 82px;
     border: none;
