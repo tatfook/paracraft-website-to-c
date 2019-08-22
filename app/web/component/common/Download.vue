@@ -34,7 +34,7 @@
           <div class="download-center-cabinet-box">
             <div class="download-center-cabinet-box-cover">
               <img src="@/asset/images/下载页/下载安装/phone_android.png" alt="">
-              <qrcode :value="downloadURL.android_huawei" :options="QROptions" class="download-center-cabinet-box-QR"></qrcode>
+              <qrcode :value="QRUrl" :options="QROptions" class="download-center-cabinet-box-QR"></qrcode>
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
             <a :href="downloadURL.android_apk" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
@@ -108,14 +108,14 @@ export default {
       this.downloadCount = 103200 + this.downloadCount
       return this.downloadCount.toString().split('')
     },
-    baseUrl() {
-      return process.env.KEEPWORK_API_PREFIX
-    },
     QROptions() {
       return {
         width: 91,
         height: 91
       }
+    },
+    QRUrl() {
+      return `${window.location.origin}/qrDownload?url=${this.downloadURL.android_apk || ''}`
     }
   },
   async mounted() {
