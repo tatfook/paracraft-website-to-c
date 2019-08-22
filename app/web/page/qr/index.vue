@@ -22,7 +22,7 @@ export default {
     if (!url) {
       url = await this.getAndroidApkURL()
     }
-    setTimeout(() => this.emitDownload(url), 800)
+    setTimeout(() => this.emitDownload(url), 500)
   },
   methods: {
     async getAndroidApkURL() {
