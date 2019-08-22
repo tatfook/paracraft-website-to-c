@@ -115,7 +115,7 @@ export default {
       }
     },
     QRUrl() {
-      return `${window.location.origin}/qrDownload?url=${this.downloadURL.android_apk || ''}`
+      return `${window.location.origin}/qrDownload`
     }
   },
   async mounted() {
