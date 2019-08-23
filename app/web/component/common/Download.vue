@@ -34,7 +34,7 @@
           <div class="download-center-cabinet-box">
             <div class="download-center-cabinet-box-cover">
               <img src="@/asset/images/下载页/下载安装/phone_android.png" alt="">
-              <qrcode :value="downloadURL.android_huawei" :options="QROptions" class="download-center-cabinet-box-QR"></qrcode>
+              <qrcode :value="QRUrl" :options="QROptions" class="download-center-cabinet-box-QR"></qrcode>
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
             <a :href="downloadURL.android_apk" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
@@ -73,7 +73,9 @@
             <h4 class="download-abstract-intro-box-content-title">Paracraft创意空间</h4>
             <p class="download-abstract-intro-box-content-text">3D个人电影创作软件</p>
             <p class="download-abstract-intro-box-content-text">开源</p>
-            <p class="download-abstract-intro-box-content-text">Paracraft SDK，源代码，材质包，插件请看这里</p>
+            <p class="download-abstract-intro-box-content-text">Paracraft SDK，源代码，材质包，插件请看
+              <a class="download-center-paracraft-hint-guide" target="_blank" href="https://keepwork.com/official/docs/Resource/intro">这里</a>
+            </p>
           </div>
         </div>
       </div>
@@ -106,14 +108,14 @@ export default {
       this.downloadCount = 103200 + this.downloadCount
       return this.downloadCount.toString().split('')
     },
-    baseUrl() {
-      return process.env.KEEPWORK_API_PREFIX
-    },
     QROptions() {
       return {
         width: 91,
         height: 91
       }
+    },
+    QRUrl() {
+      return `${window.location.origin}/qrDownload`
     }
   },
   async mounted() {

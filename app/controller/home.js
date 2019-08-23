@@ -4,5 +4,10 @@ module.exports = app => {
       const { ctx } = this
       await ctx.renderClient('home/index.js')
     }
+    
+    async qr() {
+      const { ctx } = this
+      await ctx.renderClient('qr/index.js')
+    }
   }
 }
