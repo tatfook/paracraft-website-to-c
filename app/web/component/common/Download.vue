@@ -37,7 +37,7 @@
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
             <a :href="downloadURL.android_apk" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
-            <a :href="downloadURL.android_huawei" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从华为应用商店下载</a>
+            <a :href="downloadURL.android_huawei" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从小米应用商店下载</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
