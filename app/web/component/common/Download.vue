@@ -10,22 +10,21 @@
       </div>
     </div>
     <div class="download-center">
-      <p class="download-center-guide">遇到安装问题，不会安装？<a class="download-center-guide-link" href="https://keepwork.com/official/docs/sales/common/install_guide" target="_blank">点击这里</a>查看安装指引</p>
+      <p class="download-center-guide"><a class="download-center-guide-link" href="https://keepwork.com/official/docs/sales/common/install_guide" target="_blank">点击这里</a>查看安装指引</p>
       <div class="download-center-cabinet">
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
             <p class="download-center-cabinet-box-recommend">Windows版（推荐）</p>
             <a :href="downloadURL.window_install" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight "><img class="download-center-cabinet-box-desc-img" src="@/asset/images/下载页/下载安装/Windows-8拷贝.png" alt="">下载</a>
-            <a :href="downloadURL.window_zip" @click="addDownloadCount" class="download-center-cabinet-box-desc">U盘免安装版</a>
-            <p class="download-center-cabinet-box-hint">如无法安装，可能你使用了特殊的下载工具，可尝试U盘免安装版</p>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
-            <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
-            <a :href="downloadURL.mac" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
-            <p class="download-center-cabinet-box-hint">0.7.430</p>
+            <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
+            <p class="download-center-cabinet-box-recommend">Windows教学版</p>
+            <a :href="downloadURL.window_zip" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">下载</a>
+            <p class="download-center-cabinet-box-hint">推荐学校、培训结构下载使用</p>
           </div>
         </div>
       </div>
@@ -43,10 +42,21 @@
         </div>
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
-            <img src="@/asset/images/下载页/下载安装/phone_android拷贝.png" alt="">
-            <p class="download-center-cabinet-box-hint">IOS版 (敬请期待)</p>
+            <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
+            <a :href="downloadURL.mac" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+            <p class="download-center-cabinet-box-hint">0.7.430</p>
           </div>
         </div>
+
+      </div>
+      <div class="download-center-cabinet">
+        <div class="download-center-cabinet-box-wrap">
+          <div class="download-center-cabinet-box">
+            <img src="@/asset/images/下载页/下载安装/phone_android拷贝.png" alt="">
+            <a :href="downloadURL.ios" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+          </div>
+        </div>
+        <div class="download-center-cabinet-box-wrap"></div>
       </div>
       <div class="download-center-paracraft">
         <p class="download-center-paracraft-title">用Win10虚拟机安装Paracraft</p>
@@ -221,8 +231,6 @@ export default {
           align-items: center;
           flex: 1;
         }
-        &-recommend {
-        }
         &-desc {
           display: flex;
           padding: 7px;
@@ -233,6 +241,7 @@ export default {
           justify-content: center;
           color: #409eff;
           text-decoration: none;
+          cursor: pointer;
           &:hover {
             color: rgb(51, 143, 229);
             border: 1px solid rgb(51, 143, 229);
