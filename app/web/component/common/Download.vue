@@ -57,7 +57,7 @@
             <a href="https://apps.apple.com/cn/app/paracraft/id1422411677" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">应用商店打开</a>
           </div>
         </div>
-        <div class="download-center-cabinet-box-wrap"></div>
+        <div class="download-center-cabinet-box-wrap download-center-cabinet-box-wrap-empty"></div>
       </div>
       <div class="download-center-paracraft">
         <p class="download-center-paracraft-title download-center-paracraft-title-beta">Paracraft Beta测试版</p>
@@ -385,6 +385,9 @@ export default {
           min-width: 220px;
           border-bottom: 10px solid rgb(249, 249, 249);
           padding: 26px 0;
+          &-wrap-empty {
+            display: none;
+          }
           &-hint {
             font-size: 12px;
             &-phone {
@@ -402,6 +405,9 @@ export default {
         &-hint {
           font-size: 12px;
           padding: 0 12px;
+        }
+        &-button {
+          margin-left: 12px;
         }
       }
     }
