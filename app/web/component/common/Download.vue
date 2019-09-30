@@ -16,7 +16,7 @@
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
             <p class="download-center-cabinet-box-recommend">Windows版（推荐）</p>
-            <a :href="downloadURL.window_install" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight "><img class="download-center-cabinet-box-desc-img" src="@/asset/images/下载页/下载安装/Windows-8拷贝.png" alt="">下载</a>
+            <a :href="downloadURL.window_install" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">下载</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
@@ -36,15 +36,15 @@
               <qrcode :value="QRUrl" :options="QROptions" class="download-center-cabinet-box-QR"></qrcode>
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
-            <a :href="downloadURL.android_apk" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">点击下载手机APK安装包</a>
+            <a :href="downloadURL.android_apk" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">下载</a>
             <a :href="downloadURL.android_huawei" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从小米应用商店下载</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
+            <p class="download-center-cabinet-box-recommend">Mac版</p>
             <a :href="downloadURL.mac" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
-            <p class="download-center-cabinet-box-hint">0.7.430</p>
           </div>
         </div>
 
@@ -53,10 +53,15 @@
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/phone_android拷贝.png" alt="">
+            <p class="download-center-cabinet-box-recommend">iOS版</p>
             <a href="https://apps.apple.com/cn/app/paracraft/id1422411677" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap"></div>
+      </div>
+      <div class="download-center-paracraft">
+        <p class="download-center-paracraft-title">Paracraft Beta测试版</p>
+        <a href="http://cdn.keepwork.com/paracraft/win32/ParaCraft_beta.zip?ver=009" class="download-center-paracraft-button">Paracraft Beta</a>
       </div>
       <div class="download-center-paracraft">
         <p class="download-center-paracraft-title">用Win10虚拟机安装Paracraft</p>
@@ -120,8 +125,8 @@ export default {
     },
     QROptions() {
       return {
-        width: 91,
-        height: 91
+        width: 80,
+        height: 80
       }
     },
     QRUrl() {
@@ -209,6 +214,7 @@ export default {
     &-cabinet {
       display: flex;
       padding: 40px 0;
+      align-items: flex-start;
       &-phone {
         background: rgb(232, 245, 234);
       }
@@ -216,6 +222,10 @@ export default {
         flex: 1;
         text-align: center;
         align-items: center;
+        img {
+          width: auto;
+          height: 80px;
+        }
         &-cover {
           width: 50px;
           margin: 0 auto;
@@ -269,7 +279,6 @@ export default {
             font-size: 16px;
             display: block;
             cursor: pointer;
-            text-decoration: none;
             text-align: center;
             &:hover {
               color: #328654;
@@ -298,6 +307,17 @@ export default {
       }
       &-code {
         border: none;
+      }
+      &-button {
+        display: inline-block;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        background: #409eff;
+        color: #fff;
+        width: 142px;
+        text-align: center;
+        margin-bottom: 16px;
       }
     }
   }
