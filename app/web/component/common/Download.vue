@@ -37,14 +37,14 @@
             </div>
             <p class="download-center-cabinet-box-recommend">Android版</p>
             <a :href="downloadURL.android_apk" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">下载</a>
-            <a :href="downloadURL.android_huawei" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">从小米应用商店下载</a>
+            <a :href="downloadURL.android_huawei" target="_blank" class="download-center-cabinet-box-hint-phone" @click="addDownloadCount">小米应用商店打开</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap">
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/mac.png" alt="">
             <p class="download-center-cabinet-box-recommend">Mac版</p>
-            <a :href="downloadURL.mac" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+            <a :href="downloadURL.mac" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">应用商店打开</a>
           </div>
         </div>
 
@@ -54,14 +54,14 @@
           <div class="download-center-cabinet-box">
             <img src="@/asset/images/下载页/下载安装/phone_android拷贝.png" alt="">
             <p class="download-center-cabinet-box-recommend">iOS版</p>
-            <a href="https://apps.apple.com/cn/app/paracraft/id1422411677" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">苹果应用商店</a>
+            <a href="https://apps.apple.com/cn/app/paracraft/id1422411677" target="_blank" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">应用商店打开</a>
           </div>
         </div>
         <div class="download-center-cabinet-box-wrap"></div>
       </div>
       <div class="download-center-paracraft">
-        <p class="download-center-paracraft-title">Paracraft Beta测试版</p>
-        <a href="http://cdn.keepwork.com/paracraft/win32/ParaCraft_beta.zip?ver=009" class="download-center-paracraft-button">Paracraft Beta</a>
+        <p class="download-center-paracraft-title download-center-paracraft-title-beta">Paracraft Beta测试版</p>
+        <a href="http://cdn.keepwork.com/paracraft/win32/ParaCraft_beta.zip?ver=009" class="download-center-paracraft-button">Paracraft Beta 下载</a>
       </div>
       <div class="download-center-paracraft">
         <p class="download-center-paracraft-title">用Win10虚拟机安装Paracraft</p>
@@ -293,6 +293,9 @@ export default {
         color: #333;
         font-size: 24px;
         margin: 53px 0 20px;
+        &-beta {
+          margin-top: 16px;
+        }
       }
       &-hint {
         color: #8d8d8d;
@@ -315,7 +318,7 @@ export default {
         border-radius: 4px;
         background: #409eff;
         color: #fff;
-        width: 142px;
+        width: 158px;
         text-align: center;
         margin-bottom: 16px;
       }
@@ -362,8 +365,6 @@ export default {
         }
         &-version {
           font-size: 12px;
-          &-new {
-          }
         }
         &-count {
           font-size: 12px;
