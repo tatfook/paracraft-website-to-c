@@ -24,7 +24,7 @@
             <img src="@/asset/images/下载页/下载安装/Windows-8.png" alt="">
             <p class="download-center-cabinet-box-recommend">Windows教学版</p>
             <a :href="downloadURL.window_zip" @click="addDownloadCount" class="download-center-cabinet-box-desc download-center-cabinet-box-desc-highlight ">下载</a>
-            <p class="download-center-cabinet-box-hint">推荐学校、培训结构下载使用</p>
+            <p class="download-center-cabinet-box-hint">推荐学校、培训机构下载使用</p>
           </div>
         </div>
       </div>
